@@ -72,87 +72,106 @@ function HeroSlider() {
       className="hero-slider"
       aria-label="Exodus Moving"
     >
-      <div
-        className="hero-slider__track"
-        style={{
-          transform: `translateX(-${currentSlide * 100}%)`,
-        }}
-      >
-        {slides.map((slide) => (
-          <article
-            key={slide.id}
-            className="hero-slider__slide"
-          >
-            <img
-              className="hero-slider__image"
-              src={slide.image}
-              alt={slide.alt}
-            />
-
-            <div className="hero-slider__overlay" />
-
-            <div
-              className="hero-slider__content"
-              dir="rtl"
+      <div className="hero-slider__container">
+        <div
+          className="hero-slider__track"
+          style={{
+            transform: `translateX(-${currentSlide * 100}%)`,
+          }}
+        >
+          {slides.map((slide) => (
+            <article
+              key={slide.id}
+              className="hero-slider__slide"
             >
-              <p className="hero-slider__brand">
-                Exodus Moving
-              </p>
+              <img
+                className="hero-slider__image"
+                src={slide.image}
+                alt={slide.alt}
+              />
 
-              <h1 className="hero-slider__title">
-                {slide.title}
-              </h1>
+              <div
+                className="hero-slider__overlay"
+                aria-hidden="true"
+              />
 
-              <p className="hero-slider__description">
-                {slide.description}
-              </p>
+              <div className="hero-slider__content-wrapper">
+                <div
+                  className="hero-slider__content"
+                  dir="rtl"
+                >
+                  <p className="hero-slider__brand">
+                    Exodus Moving
+                  </p>
 
-              <a
-                className="hero-slider__button"
-                href="#contacts"
-              >
-                לקבלת הצעת מחיר
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
+                  <h1 className="hero-slider__title">
+                    {slide.title}
+                  </h1>
 
-      <button
-        className="hero-slider__arrow hero-slider__arrow--previous"
-        type="button"
-        aria-label="השקופית הקודמת"
-        onClick={handlePreviousSlide}
-      >
-        ‹
-      </button>
+                  <p className="hero-slider__description">
+                    {slide.description}
+                  </p>
 
-      <button
-        className="hero-slider__arrow hero-slider__arrow--next"
-        type="button"
-        aria-label="השקופית הבאה"
-        onClick={handleNextSlide}
-      >
-        ›
-      </button>
+<a
 
-      <div
-        className="hero-slider__dots"
-        aria-label="בחירת שקופית"
-      >
-        {slides.map((slide, index) => (
-          <button
-            key={slide.id}
-            className={`hero-slider__dot ${
-              currentSlide === index
-                ? 'hero-slider__dot--active'
-                : ''
-            }`}
-            type="button"
-            aria-label={`שקופית ${index + 1}`}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
+  className="hero-slider__button"
+
+  href="https://wa.me/972534309087?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%95%D7%91%D7%9C%D7%94."
+
+  target="_blank"
+
+  rel="noopener noreferrer"
+
+>
+
+  לקבלת הצעת מחיר
+
+</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <button
+          className="hero-slider__arrow hero-slider__arrow--previous"
+          type="button"
+          aria-label="השקופית הקודמת"
+          onClick={handlePreviousSlide}
+        >
+          ‹
+        </button>
+
+        <button
+          className="hero-slider__arrow hero-slider__arrow--next"
+          type="button"
+          aria-label="השקופית הבאה"
+          onClick={handleNextSlide}
+        >
+          ›
+        </button>
+
+        <div
+          className="hero-slider__dots"
+          aria-label="בחירת שקופית"
+        >
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              className={`hero-slider__dot ${
+                currentSlide === index
+                  ? 'hero-slider__dot--active'
+                  : ''
+              }`}
+              type="button"
+              aria-label={`שקופית ${index + 1}`}
+              aria-current={
+                currentSlide === index ? 'true' : undefined
+              }
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

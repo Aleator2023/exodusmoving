@@ -1,14 +1,49 @@
 :root {
-  color: #102a43;
-  background-color: #ffffff;
+  --color-primary: #f58220;
+  --color-primary-hover: #d9680f;
+
+  --color-dark: #102a43;
+  --color-dark-soft: #243b53;
+
+  --color-text: #1f2933;
+  --color-text-muted: #626d78;
+
+  --color-white: #ffffff;
+  --color-background: #ffffff;
+  --color-background-alt: #f7f8fa;
+  --color-border: #e4e7eb;
+
+  --container-width: 1200px;
+  --container-padding: 20px;
+
+  --section-padding: 80px;
+
+  --border-radius-small: 12px;
+  --border-radius-medium: 18px;
+  --border-radius-large: 30px;
+
+  --shadow-card: 0 10px 30px rgba(16, 42, 67, 0.08);
+  --shadow-card-hover: 0 16px 38px rgba(16, 42, 67, 0.14);
+
+  color: var(--color-dark);
+  background-color: var(--color-background);
+
   font-family:
-    Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Inter,
+    Arial,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     sans-serif;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -20,7 +55,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background-color: #ffffff;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 button,
@@ -39,192 +75,22 @@ a {
   color: inherit;
 }
 
-.hero {
-  display: flex;
-  min-height: 620px;
-  align-items: center;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(16, 42, 67, 0.96),
-      rgba(16, 42, 67, 0.75)
-    ),
-    linear-gradient(135deg, #243b53, #147d64);
-  color: #ffffff;
-  padding: 80px 20px;
-}
-
-.hero__content {
+.container {
   width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
 }
 
-.hero__eyebrow {
-  margin: 0 0 16px;
-  color: #9fe3c7;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero__title {
-  max-width: 800px;
-  margin: 0;
-  font-size: clamp(46px, 8vw, 82px);
-  line-height: 1;
-}
-
-.hero__description {
-  max-width: 680px;
-  margin: 28px 0 0;
-  color: #d9e2ec;
-  font-size: 20px;
-  line-height: 1.7;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 36px;
-}
-
-.button {
-  display: inline-flex;
-  min-height: 50px;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  font-weight: 800;
-  padding: 0 22px;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button--primary {
-  background-color: #147d64;
-  color: #ffffff;
-}
-
-.button--primary:hover {
-  background-color: #0e6652;
-}
-
-.button--secondary {
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
-.button--secondary:hover {
-  background-color: #ffffff;
-  color: #102a43;
-}
-
-.section-title {
-  margin: 0 0 32px;
-  font-size: clamp(30px, 4vw, 44px);
-}
-
-.advantages,
-.services-grid {
-  display: grid;
-  gap: 24px;
-  margin-top: 40px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.services-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.card {
-  border: 1px solid #d9e2ec;
-  border-radius: 16px;
-  background-color: #ffffff;
-  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.07);
-  padding: 28px;
-}
-
-.card h2,
-.card h3 {
-  margin: 0 0 14px;
-}
-
-.card p {
-  margin: 0;
-  color: #52606d;
-  line-height: 1.7;
-}
-
-.text-content {
-  max-width: 780px;
-  margin-top: 48px;
-}
-
-.text-content h2 {
-  margin: 36px 0 12px;
-}
-
-.text-content p {
-  color: #52606d;
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.contact-card {
-  max-width: 650px;
-  margin-top: 40px;
-  border-radius: 16px;
-  background-color: #f0f4f8;
-  padding: 32px;
-}
-
-.contact-card p {
-  margin: 0 0 18px;
-  font-size: 18px;
-}
-
-.contact-card p:last-child {
-  margin-bottom: 0;
-}
-
-.contact-card a {
-  color: #147d64;
-  font-weight: 700;
-}
-
-.not-found {
-  text-align: center;
-}
-
-.not-found__code {
-  margin: 0;
-  color: #147d64;
-  font-size: 100px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.not-found .button {
-  margin-top: 20px;
-}
-
-@media (max-width: 780px) {
-  .hero {
-    min-height: 540px;
-  }
-
-  .advantages,
-  .services-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 620px) {
+  :root {
+    --container-padding: 16px;
+    --section-padding: 60px;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

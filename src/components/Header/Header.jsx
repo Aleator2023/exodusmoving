@@ -83,99 +83,99 @@ function Header({ language, onLanguageChange }) {
   };
 
   return (
-    <header className="header">
-      <div className="header__container">
-        <a
-          className="header__logo"
-          href="#home"
-          aria-label="Exodus Moving"
-        >
-          <img
-            className="header__logo-image"
-            src={logo}
-            alt="Exodus Moving"
-          />
-        </a>
+  <header className="header">
+    <div className="container header__container">
+      <a
+        className="header__logo"
+        href="#home"
+        aria-label="Exodus Moving"
+      >
+        <img
+          className="header__logo-image"
+          src={logo}
+          alt="Exodus Moving"
+        />
+      </a>
 
-        <nav
-          className="header__navigation"
-          aria-label={text.navigationLabel}
-        >
-          {navigation.map(({ href, label }) => (
-            <a
-              key={href}
-              className="header__link"
-              href={href}
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-
-        <div
-          className="language-selector"
-          ref={languageMenuRef}
-        >
-          <button
-            className="language-selector__button"
-            type="button"
-            aria-label={text.languageLabel}
-            aria-expanded={isLanguageMenuOpen}
-            onClick={() =>
-              setIsLanguageMenuOpen((currentValue) => !currentValue)
-            }
+      <nav
+        className="header__navigation"
+        aria-label={text.navigationLabel}
+      >
+        {navigation.map(({ href, label }) => (
+          <a
+            key={href}
+            className="header__link"
+            href={href}
           >
-            <span
-              className="language-selector__icon"
-              aria-hidden="true"
-            >
-              🌐
-            </span>
+            {label}
+          </a>
+        ))}
+      </nav>
 
-            <span>{currentLanguage.shortLabel}</span>
-
-            <span
-              className={`language-selector__arrow ${
-                isLanguageMenuOpen
-                  ? 'language-selector__arrow--open'
-                  : ''
-              }`}
-              aria-hidden="true"
-            >
-              ▾
-            </span>
-          </button>
-
-          {isLanguageMenuOpen && (
-            <div className="language-selector__menu">
-              {languages.map((item) => (
-                <button
-                  key={item.code}
-                  className={`language-selector__option ${
-                    language === item.code
-                      ? 'language-selector__option--active'
-                      : ''
-                  }`}
-                  type="button"
-                  onClick={() => handleLanguageSelect(item.code)}
-                >
-                  <span>{item.label}</span>
-                  <span>{item.shortLabel}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <a
-          className="header__phone"
-          href="tel:+972534309087"
+      <div
+        className="language-selector"
+        ref={languageMenuRef}
+      >
+        <button
+          className="language-selector__button"
+          type="button"
+          aria-label={text.languageLabel}
+          aria-expanded={isLanguageMenuOpen}
+          onClick={() =>
+            setIsLanguageMenuOpen((currentValue) => !currentValue)
+          }
         >
-          053-430-90-87
-        </a>
+          <span
+            className="language-selector__icon"
+            aria-hidden="true"
+          >
+            🌐
+          </span>
+
+          <span>{currentLanguage.shortLabel}</span>
+
+          <span
+            className={`language-selector__arrow ${
+              isLanguageMenuOpen
+                ? 'language-selector__arrow--open'
+                : ''
+            }`}
+            aria-hidden="true"
+          >
+            ▾
+          </span>
+        </button>
+
+        {isLanguageMenuOpen && (
+          <div className="language-selector__menu">
+            {languages.map((item) => (
+              <button
+                key={item.code}
+                className={`language-selector__option ${
+                  language === item.code
+                    ? 'language-selector__option--active'
+                    : ''
+                }`}
+                type="button"
+                onClick={() => handleLanguageSelect(item.code)}
+              >
+                <span>{item.label}</span>
+                <span>{item.shortLabel}</span>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
-    </header>
-  );
+
+      <a
+        className="header__phone"
+        href="tel:+972534309087"
+      >
+        053-430-90-87
+      </a>
+    </div>
+  </header>
+);
 }
 
 export default Header;

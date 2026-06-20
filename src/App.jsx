@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import HeroSlider from './components/HeroSlider/HeroSlider';
 import Services from './components/Services/Services';
+import Prices from './components/Prices/Prices';
 import Header from './components/Header/Header';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
@@ -31,22 +32,8 @@ function App() {
   <HeroSlider />
   <Services />
   <About />
-
-
-
-
-        <section id="prices" className="page-section">
-          <div className="container">
-            <h2>Цены</h2>
-          </div>
-        </section>
-
-        <section id="contacts" className="page-section">
-          <div className="container">
-            <h2>Контакты</h2>
-          </div>
-        </section>
-      </main>
+  <Prices />
+   </main>
 
       <Footer />
       <WhatsAppButton />

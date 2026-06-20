@@ -62,26 +62,44 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="services" id="services" dir="rtl">
-      <div className="services__container">
-        <h2 className="services__title">השירותים שלנו</h2>
+    <section
+      className="services"
+      id="services"
+      dir="rtl"
+      aria-labelledby="services-title"
+    >
+      <div className="container services__container">
+        <header className="services__heading">
+          <h2
+            className="services__title"
+            id="services-title"
+          >
+            השירותים שלנו
+          </h2>
 
-        <p className="services__subtitle">
-          שירותי הובלה מקצועיים לדירות ולמשרדים
-        </p>
+          <p className="services__subtitle">
+            שירותי הובלה מקצועיים לדירות ולמשרדים
+          </p>
+        </header>
 
         <div className="services__grid">
           {services.map(({ id, title, image, alt }) => (
-            <article className="service-card" key={id}>
+            <article
+              className="service-card"
+              key={id}
+            >
               <div className="service-card__icon-wrapper">
                 <img
                   className="service-card__image"
                   src={image}
                   alt={alt}
+                  loading="lazy"
                 />
               </div>
 
-              <h3 className="service-card__title">{title}</h3>
+              <h3 className="service-card__title">
+                {title}
+              </h3>
             </article>
           ))}
         </div>
