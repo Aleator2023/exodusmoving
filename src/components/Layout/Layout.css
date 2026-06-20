@@ -1,0 +1,32 @@
+.site-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.page {
+  padding: 64px 20px;
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 0 0 24px;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+}
+
+.page-description {
+  max-width: 760px;
+  margin: 0;
+  color: #52606d;
+  font-size: 18px;
+  line-height: 1.7;
+}
