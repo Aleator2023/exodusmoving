@@ -12,15 +12,15 @@ import './Services.css';
 const services = [
   {
     id: 1,
-    title: 'הובלת תכולת דירות',
+    title: 'הובלות דירה',
     image: flatImage,
-    alt: 'הובלת תכולת דירות',
+    alt:   'הובלות דירה',
   },
   {
     id: 2,
-    title: 'הובלת תכולת משרדים',
+    title:  'הובלת משרדים ועסקים',
     image: officeImage,
-    alt: 'הובלת תכולת משרדים',
+    alt: 'הובלת משרדים ועסקים',
   },
   {
     id: 3,
@@ -30,9 +30,9 @@ const services = [
   },
   {
     id: 4,
-    title: 'צוות מקצועי ומיומן',
+    title: 'צוות מקצועי קבוע',
     image: teamImage,
-    alt: 'צוות מקצועי ומיומן',
+    alt: 'צוות מקצועי קבוע',
   },
   {
     id: 5,
@@ -42,9 +42,9 @@ const services = [
   },
   {
     id: 6,
-    title: 'הובלות במרכז הארץ',
+    title: 'הובלות בכל הארץ',
     image: countryImage,
-    alt: 'הובלות במרכז הארץ',
+    alt: 'הובלות בכל הארץ',
   },
   {
     id: 7,
@@ -54,7 +54,7 @@ const services = [
   },
   {
     id: 8,
-    title: '10 שנות ניסיון',
+    title: 'מעל 10 שנות ניסיון',
     image: experienceImage,
     alt: 'עשר שנות ניסיון בתחום ההובלות',
   },

@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import truckImage from '../../assets/hero/truck-israel.jpg';
 import packingImage from '../../assets/hero/packing-service.jpg';
 import apartmentImage from '../../assets/hero/apartment-moving.jpg';
+import furnitureImage from '../../assets/hero/razborka.jpg';
+import craneImage from '../../assets/hero/kran.jpg';
 
 import './HeroSlider.css';
 
@@ -21,10 +23,26 @@ const slides = [
     title: 'שירותי אריזה',
     description:
       'אריזה מקצועית של רהיטים, כלי בית וחפצים אישיים בקרטונים.',
-    alt: 'עובדי הובלה אורזים רהיטים וקרטונים',
+    alt: 'עובדי חברת הובלות אורזים חפצים בקרטונים',
   },
   {
     id: 3,
+    image: furnitureImage,
+    title: 'פירוק והרכבת רהיטים',
+    description:
+      'פירוק והרכבה מקצועיים של ארונות, מיטות ורהיטים מכל הסוגים.',
+    alt: 'עובדי הובלה מפרקים ומרכיבים ארון בדירה',
+  },
+  {
+    id: 4,
+    image: craneImage,
+    title: 'הובלות עם מנוף',
+    description:
+      'שירותי מנוף מקצועיים להעלאת רהיטים בבטחה לדירות בקומות גבוהות.',
+    alt: 'מנוף עם משטח מיוחד מעלה ספה לדירה בקומה גבוהה',
+  },
+  {
+    id: 5,
     image: truckImage,
     title: 'הובלות בכל הארץ',
     description:
@@ -32,6 +50,9 @@ const slides = [
     alt: 'משאית הובלה נוסעת בכביש בישראל',
   },
 ];
+
+const whatsappLink =
+  'https://wa.me/972534309087?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%95%D7%91%D7%9C%D7%94.';
 
 function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -50,27 +71,13 @@ function HeroSlider() {
     };
   }, []);
 
-  const handlePreviousSlide = () => {
-    setCurrentSlide((previousSlide) =>
-      previousSlide === 0
-        ? slides.length - 1
-        : previousSlide - 1,
-    );
-  };
 
-  const handleNextSlide = () => {
-    setCurrentSlide((previousSlide) =>
-      previousSlide === slides.length - 1
-        ? 0
-        : previousSlide + 1,
-    );
-  };
 
   return (
     <section
       id="home"
       className="hero-slider"
-      aria-label="Exodus Moving"
+      aria-label="אקסודוס הובלות"
     >
       <div className="hero-slider__container">
         <div
@@ -101,7 +108,7 @@ function HeroSlider() {
                   dir="rtl"
                 >
                   <p className="hero-slider__brand">
-                    Exodus Moving
+                    אקסודוס הובלות
                   </p>
 
                   <h1 className="hero-slider__title">
@@ -112,44 +119,20 @@ function HeroSlider() {
                     {slide.description}
                   </p>
 
-<a
-
-  className="hero-slider__button"
-
-  href="https://wa.me/972534309087?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%95%D7%91%D7%9C%D7%94."
-
-  target="_blank"
-
-  rel="noopener noreferrer"
-
->
-
-  לקבלת הצעת מחיר
-
-</a>
+                  <a
+                    className="hero-slider__button"
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="לקבלת הצעת מחיר באמצעות WhatsApp"
+                  >
+                    לקבלת הצעת מחיר
+                  </a>
                 </div>
               </div>
             </article>
           ))}
         </div>
-
-        <button
-          className="hero-slider__arrow hero-slider__arrow--previous"
-          type="button"
-          aria-label="השקופית הקודמת"
-          onClick={handlePreviousSlide}
-        >
-          ‹
-        </button>
-
-        <button
-          className="hero-slider__arrow hero-slider__arrow--next"
-          type="button"
-          aria-label="השקופית הבאה"
-          onClick={handleNextSlide}
-        >
-          ›
-        </button>
 
         <div
           className="hero-slider__dots"

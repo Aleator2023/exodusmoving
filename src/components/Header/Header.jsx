@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import israelFlag from '../../assets/il.png';
+import russianFlag from '../../assets/ru.png';
+import englishFlag from '../../assets/en.png';
 
 import logo from '../../assets/exodus-moving-logo-transparent.png';
 
@@ -37,9 +40,27 @@ const translations = {
 };
 
 const languages = [
-  { code: 'he', label: 'עברית', shortLabel: 'HE' },
-  { code: 'ru', label: 'Русский', shortLabel: 'RU' },
-  { code: 'en', label: 'English', shortLabel: 'EN' },
+  {
+    code: 'he',
+    label: 'עברית',
+    shortLabel: 'HE',
+    flag: israelFlag,
+    flagAlt: 'דגל ישראל',
+  },
+  {
+    code: 'ru',
+    label: 'Русский',
+    shortLabel: 'RU',
+    flag: russianFlag,
+    flagAlt: 'Флаг России',
+  },
+  {
+    code: 'en',
+    label: 'English',
+    shortLabel: 'EN',
+    flag: englishFlag,
+    flagAlt: 'English language flag',
+  },
 ];
 
 function Header({ language, onLanguageChange }) {
@@ -116,53 +137,65 @@ function Header({ language, onLanguageChange }) {
         className="language-selector"
         ref={languageMenuRef}
       >
-        <button
-          className="language-selector__button"
-          type="button"
-          aria-label={text.languageLabel}
-          aria-expanded={isLanguageMenuOpen}
-          onClick={() =>
-            setIsLanguageMenuOpen((currentValue) => !currentValue)
-          }
-        >
-          <span
-            className="language-selector__icon"
-            aria-hidden="true"
-          >
-            🌐
-          </span>
+<button
+  className="language-selector__button"
+  type="button"
+  aria-label={text.languageLabel}
+  aria-expanded={isLanguageMenuOpen}
+  onClick={() =>
+    setIsLanguageMenuOpen((currentValue) => !currentValue)
+  }
+>
+  <img
+    className="language-selector__flag"
+    src={currentLanguage.flag}
+    alt=""
+    aria-hidden="true"
+  />
 
-          <span>{currentLanguage.shortLabel}</span>
+  <span>{currentLanguage.shortLabel}</span>
 
-          <span
-            className={`language-selector__arrow ${
-              isLanguageMenuOpen
-                ? 'language-selector__arrow--open'
-                : ''
-            }`}
-            aria-hidden="true"
-          >
-            ▾
-          </span>
-        </button>
+  <span
+    className={`language-selector__arrow ${
+      isLanguageMenuOpen
+        ? 'language-selector__arrow--open'
+        : ''
+    }`}
+    aria-hidden="true"
+  >
+    ▾
+  </span>
+</button>
 
         {isLanguageMenuOpen && (
           <div className="language-selector__menu">
-            {languages.map((item) => (
-              <button
-                key={item.code}
-                className={`language-selector__option ${
-                  language === item.code
-                    ? 'language-selector__option--active'
-                    : ''
-                }`}
-                type="button"
-                onClick={() => handleLanguageSelect(item.code)}
-              >
-                <span>{item.label}</span>
-                <span>{item.shortLabel}</span>
-              </button>
-            ))}
+{languages.map((item) => (
+  <button
+    key={item.code}
+    className={`language-selector__option ${
+      language === item.code
+        ? 'language-selector__option--active'
+        : ''
+    }`}
+    type="button"
+    onClick={() => handleLanguageSelect(item.code)}
+  >
+    <span className="language-selector__option-language">
+      <img
+        className="language-selector__flag"
+        src={item.flag}
+        alt=""
+        aria-hidden="true"
+      />
+
+      <span>{item.label}</span>
+    </span>
+
+    <span className="language-selector__short-label">
+      {item.shortLabel}
+    </span>
+  </button>
+))}
           </div>
         )}
       </div>

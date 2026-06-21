@@ -17,7 +17,7 @@ const prices = [
     Icon: Package,
     title: 'הובלה קטנה',
     description: 'פריט בודד או מספר פריטים',
-    price: 340,
+    price: 300,
   },
   {
     id: 2,
@@ -64,9 +64,9 @@ const prices = [
   {
     id: 8,
     Icon: Construction,
-    title: 'שירותי מנוף',
+    title: 'שרותי מנוף - עד קומה 4 ',
     description: 'תוספת עבור שעת עבודה',
-    price: 270,
+    price: 500,
     suffix: 'לשעה',
   },
 ];

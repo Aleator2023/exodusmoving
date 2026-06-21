@@ -5,7 +5,7 @@ import {
   HeartHandshake,
 } from 'lucide-react';
 
-import movingImage from '../../assets/services/flat.png';
+import movingImage from '../../assets/services/10years.png';
 
 import './About.css';
 
@@ -64,7 +64,7 @@ export default function About() {
           </h2>
 
           <p className="about__text">
-            Exodus Moving מספקת שירותי הובלה מקצועיים
+            אקסודוס הובלות מספקת שירותי הובלה מקצועיים
             לדירות, משרדים ועסקים במרכז הארץ. אנחנו
             מלווים את הלקוחות שלנו לאורך כל התהליך —
             משלב התכנון והאריזה ועד להובלה, לפריקה
