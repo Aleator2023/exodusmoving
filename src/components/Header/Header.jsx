@@ -187,9 +187,9 @@ function Header({ language, onLanguageChange }) {
               aria-hidden="true"
             />
 
-            <span>
-              {currentLanguage.shortLabel}
-            </span>
+<span className="language-selector__current-label">
+  {currentLanguage.shortLabel}
+</span>
 
             <span
               className={`language-selector__arrow ${

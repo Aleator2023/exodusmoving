@@ -250,8 +250,6 @@
   }
 }
 
-/* Мобильные устройства */
-
 @media (max-width: 650px) {
   .header__container {
     width: calc(100% - 20px);
@@ -262,8 +260,6 @@
     padding: 5px 0;
   }
 
-  /* Маленький логотип */
-
   .header__logo {
     flex-shrink: 0;
     margin-inline-end: 0;
@@ -273,8 +269,6 @@
     width: 48px;
     height: 48px;
   }
-
-  /* Навигация в одну строку */
 
   .header__navigation {
     order: initial;
@@ -293,8 +287,6 @@
     font-size: 14px;
   }
 
-  /* Оставляем только услуги и цены */
-
   .header__link--services,
   .header__link--prices {
     display: block;
@@ -305,37 +297,60 @@
     height: 2px;
   }
 
-  /* Компактный переключатель языка */
-
   .language-selector {
+    position: relative;
     flex-shrink: 0;
   }
 
   .language-selector__button {
+    width: 42px;
     min-height: 38px;
-    gap: 5px;
-    padding: 6px 8px;
-    font-size: 13px;
+    justify-content: center;
+    gap: 0;
+    padding: 6px;
   }
 
-  .language-selector__flag {
-    width: 22px;
-    height: 15px;
-  }
-
+  .language-selector__current-label,
   .language-selector__arrow {
-    font-size: 10px;
+    display: none;
   }
 
   .language-selector__menu {
-    right: auto;
-    left: 0;
-    width: 170px;
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    display: flex;
+    width: 50px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 5px;
   }
 
-  /* Телефон скрываем */
+  .language-selector__option {
+    width: 100%;
+    min-height: 38px;
+    justify-content: center;
+    gap: 0;
+    padding: 6px;
+  }
+
+  .language-selector__option-language {
+    justify-content: center;
+    gap: 0;
+  }
+
+  .language-selector__option-language > span,
+  .language-selector__short-label {
+    display: none;
+  }
+
+  .language-selector__flag {
+    width: 26px;
+    height: 18px;
+  }
 
   .header__phone {
     display: none;
   }
 }
+
