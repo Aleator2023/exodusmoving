@@ -64,7 +64,7 @@ function HeroSlider() {
           ? 0
           : previousSlide + 1,
       );
-    }, 3000);
+    }, 5000);
 
     return () => {
       window.clearInterval(sliderInterval);

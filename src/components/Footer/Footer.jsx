@@ -40,15 +40,22 @@ function Footer() {
           <div className="footer__contacts">
             <h2 className="footer__title">צור קשר</h2>
 
-            <a href="tel:+972534309087">
+            <a
+              className="footer__contact-phone"
+              href="tel:+972534309087"
+            >
               053-430-90-87
             </a>
 
-            <a href="mailto:info@exodusmoving.co.il">
-              info@exodusmoving.co.il
+            <a
+              className="footer__contact-email"
+              href="mailto:Exodusmoving2026@gmail.com"
+            >
+              Exodusmoving2026@gmail.com
             </a>
 
             <a
+              className="footer__contact-whatsapp"
               href="https://wa.me/972534309087"
               target="_blank"
               rel="noopener noreferrer"

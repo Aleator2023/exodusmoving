@@ -254,37 +254,88 @@
 
 @media (max-width: 650px) {
   .header__container {
-    width: calc(100% - 24px);
+    width: calc(100% - 20px);
+    min-height: 58px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 0;
+  }
+
+  /* Маленький логотип */
+
+  .header__logo {
+    flex-shrink: 0;
+    margin-inline-end: 0;
   }
 
   .header__logo-image {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
   }
 
-  .header__phone {
-    display: none;
-  }
+  /* Навигация в одну строку */
 
   .header__navigation {
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 18px;
-    padding: 4px 2px 8px;
-    scrollbar-width: none;
-  }
-
-  .header__navigation::-webkit-scrollbar {
-    display: none;
+    order: initial;
+    width: auto;
+    flex: 1;
+    overflow: visible;
+    justify-content: center;
+    gap: 16px;
+    padding: 0;
   }
 
   .header__link {
+    display: none;
     flex-shrink: 0;
+    padding: 17px 0;
     font-size: 14px;
+  }
+
+  /* Оставляем только услуги и цены */
+
+  .header__link--services,
+  .header__link--prices {
+    display: block;
+  }
+
+  .header__link::after {
+    bottom: 9px;
+    height: 2px;
+  }
+
+  /* Компактный переключатель языка */
+
+  .language-selector {
+    flex-shrink: 0;
+  }
+
+  .language-selector__button {
+    min-height: 38px;
+    gap: 5px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .language-selector__flag {
+    width: 22px;
+    height: 15px;
+  }
+
+  .language-selector__arrow {
+    font-size: 10px;
   }
 
   .language-selector__menu {
     right: auto;
     left: 0;
+    width: 170px;
+  }
+
+  /* Телефон скрываем */
+
+  .header__phone {
+    display: none;
   }
 }

@@ -111,33 +111,95 @@
 }
 
 @media (max-width: 560px) {
+
   .footer__container {
-    grid-template-columns: 1fr;
-    gap: 34px;
-    padding-block: 44px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-block: 26px;
+
+    text-align: center;
+
   }
 
   .footer__about {
-    grid-column: auto;
+
+    max-width: none;
+
   }
 
-  .footer__navigation,
+  .footer__logo {
+
+    font-size: 23px;
+
+  }
+
+  /* Скрываем описание компании */
+
+  .footer__description {
+
+    display: none;
+
+  }
+
+  /* Скрываем мобильную навигацию */
+
+  .footer__navigation {
+
+    display: none;
+
+  }
+
+  /* Оставляем только телефон и e-mail */
+
   .footer__contacts {
-    align-items: flex-start;
+
+    align-items: center;
+
+    gap: 8px;
+
   }
 
-  .footer__bottom-container {
-    flex-direction: column;
-    justify-content: center;
-    padding-block: 18px;
-    text-align: center;
-  }
-}
+  .footer__contacts .footer__title {
 
-@media (prefers-reduced-motion: reduce) {
-  .footer__logo,
-  .footer__navigation a,
-  .footer__contacts a {
-    transition: none;
+    display: none;
+
   }
+
+  .footer__contact-phone,
+
+  .footer__contact-email {
+
+    display: block;
+
+  }
+
+  .footer__contact-whatsapp {
+
+    display: none;
+
+  }
+
+  .footer__contact-email {
+
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+
+  }
+
+  /* Убираем нижнюю часть футера на телефоне */
+
+  .footer__bottom {
+
+    display: none;
+
+  }
+
 }
