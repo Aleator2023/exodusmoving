@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+
+import Header from './components/Header/Header';
 import HeroSlider from './components/HeroSlider/HeroSlider';
 import Services from './components/Services/Services';
-import Prices from './components/Prices/Prices';
-import Header from './components/Header/Header';
 import About from './components/About/About';
+import Prices from './components/Prices/Prices';
 import Footer from './components/Footer/Footer';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
@@ -29,13 +30,17 @@ function App() {
       />
 
       <main>
-  <HeroSlider />
-  <Services />
-  <About />
-  <Prices />
-   </main>
+        <HeroSlider language={language} />
 
-      <Footer />
+        <Services language={language} />
+
+        <About language={language} />
+
+        <Prices language={language} />
+      </main>
+
+      <Footer language={language} />
+
       <WhatsAppButton />
     </div>
   );
