@@ -1,0 +1,67 @@
+.phone-button {
+  position: fixed;
+  z-index: 200;
+  right: 60px;
+  bottom: 112px;
+
+  display: flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 10px 28px rgba(16, 42, 67, 0.28);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.phone-button:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 14px 34px rgba(16, 42, 67, 0.36);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.phone-button:active {
+  transform: scale(0.96);
+}
+
+.phone-button:focus-visible {
+  outline: 3px solid rgba(245, 130, 32, 0.45);
+  outline-offset: 4px;
+}
+
+.phone-button__icon {
+  display: block;
+  width: 31px;
+  height: 31px;
+  transform: rotate(-8deg);
+}
+
+@media (max-width: 520px) {
+  .phone-button {
+    right: 16px;
+    bottom: 84px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .phone-button__icon {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-button {
+    transition: none;
+  }
+}

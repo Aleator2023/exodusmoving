@@ -17,6 +17,7 @@ const translations = {
     contacts: 'צור קשר',
     navigationLabel: 'ניווט ראשי',
     languageLabel: 'בחירת שפה',
+    menuLabel: 'פתיחת תפריט',
   },
 
   ru: {
@@ -27,6 +28,7 @@ const translations = {
     contacts: 'Контакты',
     navigationLabel: 'Основная навигация',
     languageLabel: 'Выбор языка',
+    menuLabel: 'Открыть меню',
   },
 
   en: {
@@ -37,6 +39,7 @@ const translations = {
     contacts: 'Contacts',
     navigationLabel: 'Main navigation',
     languageLabel: 'Select language',
+    menuLabel: 'Open menu',
   },
 };
 
@@ -46,21 +49,18 @@ const languages = [
     label: 'עברית',
     shortLabel: 'HE',
     flag: israelFlag,
-    flagAlt: 'דגל ישראל',
   },
   {
     code: 'ru',
     label: 'Русский',
     shortLabel: 'RU',
     flag: russianFlag,
-    flagAlt: 'Флаг России',
   },
   {
     code: 'en',
     label: 'English',
     shortLabel: 'EN',
     flag: englishFlag,
-    flagAlt: 'English language flag',
   },
 ];
 
@@ -68,35 +68,34 @@ function Header({ language, onLanguageChange }) {
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] =
     useState(false);
 
-  const languageMenuRef = useRef(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] =
+    useState(false);
 
-  const text = translations[language];
+  const languageMenuRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+
+  const text = translations[language] ?? translations.he;
 
   const navigation = [
     {
       href: '#home',
       label: text.home,
-      className: 'header__link--home',
     },
     {
       href: '#services',
       label: text.services,
-      className: 'header__link--services',
     },
     {
       href: '#about',
       label: text.about,
-      className: 'header__link--about',
     },
     {
       href: '#prices',
       label: text.prices,
-      className: 'header__link--prices',
     },
     {
       href: '#contacts',
       label: text.contacts,
-      className: 'header__link--contacts',
     },
   ];
 
@@ -112,33 +111,74 @@ function Header({ language, onLanguageChange }) {
       ) {
         setIsLanguageMenuOpen(false);
       }
+
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
     };
 
-    document.addEventListener(
-      'mousedown',
-      handleOutsideClick,
-    );
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsLanguageMenuOpen(false);
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('keydown', handleEscape);
 
     return () => {
       document.removeEventListener(
         'mousedown',
         handleOutsideClick,
       );
+
+      document.removeEventListener(
+        'keydown',
+        handleEscape,
+      );
     };
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle(
+      'mobile-menu-open',
+      isMobileMenuOpen,
+    );
+
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, [isMobileMenuOpen]);
+
   const handleLanguageSelect = (languageCode) => {
     onLanguageChange(languageCode);
+    setIsLanguageMenuOpen(false);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleNavigationClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((currentValue) => !currentValue);
     setIsLanguageMenuOpen(false);
   };
 
   return (
     <header className="header">
       <div className="container header__container">
+        {/* Логотип */}
+
         <a
           className="header__logo"
           href="#home"
           aria-label="Exodus Moving"
+          onClick={handleNavigationClick}
         >
           <img
             className="header__logo-image"
@@ -147,25 +187,27 @@ function Header({ language, onLanguageChange }) {
           />
         </a>
 
+        {/* Навигация для компьютера */}
+
         <nav
           className="header__navigation"
           aria-label={text.navigationLabel}
         >
-          {navigation.map(
-            ({ href, label, className }) => (
-              <a
-                key={href}
-                className={`header__link ${className}`}
-                href={href}
-              >
-                {label}
-              </a>
-            ),
-          )}
+          {navigation.map(({ href, label }) => (
+            <a
+              key={href}
+              className="header__link"
+              href={href}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
 
+        {/* Выбор языка для компьютера */}
+
         <div
-          className="language-selector"
+          className="language-selector language-selector--desktop"
           ref={languageMenuRef}
         >
           <button
@@ -187,9 +229,9 @@ function Header({ language, onLanguageChange }) {
               aria-hidden="true"
             />
 
-<span className="language-selector__current-label">
-  {currentLanguage.shortLabel}
-</span>
+            <span className="language-selector__current-label">
+              {currentLanguage.shortLabel}
+            </span>
 
             <span
               className={`language-selector__arrow ${
@@ -242,12 +284,96 @@ function Header({ language, onLanguageChange }) {
           )}
         </div>
 
+        {/* Телефон */}
+
         <a
           className="header__phone"
           href="tel:+972534309087"
+          aria-label="Позвонить по номеру 053-430-90-87"
         >
           053-430-90-87
         </a>
+
+        {/* Мобильное бургер-меню */}
+
+        <div
+          className="mobile-menu"
+          ref={mobileMenuRef}
+        >
+          <button
+            className={`mobile-menu__button ${
+              isMobileMenuOpen
+                ? 'mobile-menu__button--open'
+                : ''
+            }`}
+            type="button"
+            aria-label={text.menuLabel}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
+            onClick={toggleMobileMenu}
+          >
+            <span className="mobile-menu__line" />
+            <span className="mobile-menu__line" />
+            <span className="mobile-menu__line" />
+          </button>
+
+          {isMobileMenuOpen && (
+            <div
+              className="mobile-menu__panel"
+              id="mobile-navigation"
+            >
+              {/* Сначала выбор языка */}
+
+<div className="mobile-menu__languages">
+  <p className="mobile-menu__title">
+    {text.languageLabel}
+  </p>
+
+  <div className="mobile-menu__language-list">
+    {languages.map((item) => (
+      <button
+        key={item.code}
+        className={`mobile-menu__language ${
+          language === item.code
+            ? 'mobile-menu__language--active'
+            : ''
+        }`}
+        type="button"
+        aria-label={item.label}
+        onClick={() =>
+          handleLanguageSelect(item.code)
+        }
+      >
+        <img
+          className="mobile-menu__language-flag"
+          src={item.flag}
+          alt={item.label}
+        />
+      </button>
+    ))}
+  </div>
+</div>
+
+              {/* Затем пункты меню */}
+
+              <nav
+                className="mobile-menu__navigation"
+                aria-label={text.navigationLabel}
+              >
+                {navigation.map(({ href, label }) => (
+                  <a
+                    key={href}
+                    className="mobile-menu__link"
+                    href={href}
+                    onClick={handleNavigationClick}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

@@ -6,6 +6,8 @@ import Services from './components/Services/Services';
 import About from './components/About/About';
 import Prices from './components/Prices/Prices';
 import Footer from './components/Footer/Footer';
+import HeroIntro from './components/HeroIntro/HeroIntro';
+import PhoneButton from './components/PhoneButton/PhoneButton';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
       />
 
       <main>
+        <HeroIntro language={language} />
         <HeroSlider language={language} />
 
         <Services language={language} />
@@ -40,8 +43,9 @@ function App() {
       </main>
 
       <Footer language={language} />
-
+      <PhoneButton />
       <WhatsAppButton />
+ 
     </div>
   );
 }
