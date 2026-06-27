@@ -23,61 +23,57 @@ const pricesTranslations = {
     button: 'לקבלת הצעת מחיר',
     buttonLabel: 'לקבלת הצעת מחיר באמצעות WhatsApp',
     locale: 'he-IL',
+
     items: [
       {
         id: 1,
         Icon: Package,
-        title: 'הובלה קטנה',
-        description: 'פריט בודד או מספר פריטים',
+        title: 'הובלת פריט בודד',
         price: 300,
       },
       {
         id: 2,
         Icon: BedSingle,
         title: 'דירת חדר / סטודיו',
-        description: 'תכולה בסיסית ועד 20 קרטונים',
-        price: 500,
+        price: 1000,
       },
       {
         id: 3,
         Icon: DoorOpen,
         title: 'דירת 2 חדרים',
-        description: 'סלון, חדר שינה ומוצרי חשמל',
-        price: 1000,
+        price: 1800,
       },
       {
         id: 4,
         Icon: House,
         title: 'דירת 3 חדרים',
-        description: 'תכולת דירה ועד 35 קרטונים',
-        price: 1500,
+        price: 2600,
       },
       {
         id: 5,
         Icon: Building2,
         title: 'דירת 4 חדרים',
-        description: 'סלון ושלושה חדרי שינה',
-        price: 1800,
+        price: 3400,
       },
       {
         id: 6,
         Icon: Warehouse,
         title: 'דירת 5 חדרים',
-        description: 'דירה גדולה ועד 45 קרטונים',
-        price: 2000,
+        
+        price: 4200,
       },
       {
         id: 7,
         Icon: Wrench,
         title: 'פירוק והרכבת רהיטים',
-        description: 'בהתאם לסוג ולגודל הרהיט',
-        price: 180,
+        
+        price: 150,
       },
       {
         id: 8,
         Icon: Construction,
-        title: 'שירותי מנוף – עד קומה 4',
-        description: 'תוספת עבור שעת עבודה',
+        title: 'שירותי מנוף עד קומה 4',
+        
         price: 500,
         suffix: 'לשעה',
       },
@@ -92,65 +88,66 @@ const pricesTranslations = {
     from: 'от',
     currencyLabel: 'шекелей',
     note:
-      '* Окончательная цена зависит от объёма имущества, расстояния, этажа, доступа к зданию и дополнительных услуг',
+      '* Окончательная цена зависит от объёма имущества, расстояния, этажа, доступа к зданию и дополнительных услуг.',
     button: 'Получить предложение',
     buttonLabel: 'Получить предложение через WhatsApp',
     locale: 'ru-RU',
+
     items: [
       {
         id: 1,
         Icon: Package,
-        title: 'Небольшая перевозка',
-        description: 'Один предмет или несколько вещей',
+        title: 'Перевозка одного предмета',
+        
         price: 300,
       },
       {
         id: 2,
         Icon: BedSingle,
         title: 'Однокомнатная квартира / студия',
-        description: 'Основные вещи и до 20 коробок',
-        price: 500,
+        
+        price: 1000,
       },
       {
         id: 3,
         Icon: DoorOpen,
         title: 'Двухкомнатная квартира',
-        description: 'Гостиная, спальня и бытовая техника',
-        price: 1000,
+       
+        price: 1800,
       },
       {
         id: 4,
         Icon: House,
         title: 'Трёхкомнатная квартира',
-        description: 'Содержимое квартиры и до 35 коробок',
-        price: 1500,
+        
+        price: 2600,
       },
       {
         id: 5,
         Icon: Building2,
         title: 'Четырёхкомнатная квартира',
-        description: 'Гостиная и три спальни',
-        price: 1800,
+       
+        price: 3400,
       },
       {
         id: 6,
         Icon: Warehouse,
         title: 'Пятикомнатная квартира',
-        description: 'Большая квартира и до 45 коробок',
-        price: 2000,
+       
+        price: 4200,
       },
       {
         id: 7,
         Icon: Wrench,
         title: 'Разборка и сборка мебели',
-        description: 'В зависимости от типа и размера мебели',
-        price: 180,
+        
+        price: 150,
       },
       {
         id: 8,
         Icon: Construction,
-        title: 'Услуги крана - до 4 этажа',
-        description: 'Доплата за один час работы',
+        title: 'Услуги крана до 4 этажа',
+        
         price: 500,
         suffix: 'в час',
       },
@@ -165,66 +162,66 @@ const pricesTranslations = {
     from: 'from',
     currencyLabel: 'shekels',
     note:
-      '* The final price depends on the volume of belongings, distance, floor, building access and additional services',
+      '* The final price depends on the volume of belongings, distance, floor, building access and additional services.',
     button: 'Get a Quote',
     buttonLabel: 'Get a quote via WhatsApp',
     locale: 'en-US',
+
     items: [
       {
         id: 1,
         Icon: Package,
-        title: 'Small Move',
-        description: 'One item or several belongings',
+        title: 'Single Item Move',
+       
         price: 300,
       },
       {
         id: 2,
         Icon: BedSingle,
         title: 'One-Room Apartment / Studio',
-        description: 'Basic belongings and up to 20 boxes',
-        price: 500,
+        
+        price: 1000,
       },
       {
         id: 3,
         Icon: DoorOpen,
         title: 'Two-Room Apartment',
-        description: 'Living room, bedroom and appliances',
-        price: 1000,
+       
+        price: 1800,
       },
       {
         id: 4,
         Icon: House,
         title: 'Three-Room Apartment',
-        description: 'Apartment contents and up to 35 boxes',
-        price: 1500,
+       
+        price: 2600,
       },
       {
         id: 5,
         Icon: Building2,
         title: 'Four-Room Apartment',
-        description: 'Living room and three bedrooms',
-        price: 1800,
+       
+        price: 3400,
       },
       {
         id: 6,
         Icon: Warehouse,
         title: 'Five-Room Apartment',
-        description: 'Large apartment and up to 45 boxes',
-        price: 2000,
+       
+        price: 4200,
       },
       {
         id: 7,
         Icon: Wrench,
-        title: 'Furniture Assembly',
-        description:
-          'Depending on the type and size of the furniture',
-        price: 180,
+        title: 'Furniture Disassembly and Assembly',
+       
+        price: 150,
       },
       {
         id: 8,
         Icon: Construction,
-        title: 'Crane Services - Up to Floor 4',
-        description: 'Additional charge per working hour',
+        title: 'Crane Services up to Floor 4',
+      
         price: 500,
         suffix: 'per hour',
       },
@@ -232,8 +229,14 @@ const pricesTranslations = {
   },
 };
 
+const whatsappPhoneNumber = '972534309087';
+
+const whatsappMessage =
+  'שלום, אני מעוניין לקבל הצעת מחיר מדויקת להובלה.';
+
 const whatsappLink =
-  'https://wa.me/972534309087?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9E%D7%93%D7%95%D7%99%D7%A7%D7%AA%20%D7%9C%D7%94%D7%95%D7%91%D7%9C%D7%94.';
+  `https://wa.me/${whatsappPhoneNumber}` +
+  `?text=${encodeURIComponent(whatsappMessage)}`;
 
 export default function Prices({ language = 'he' }) {
   const content =
