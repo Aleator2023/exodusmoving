@@ -1,11 +1,14 @@
 .services {
   padding-block: var(--section-padding);
   background-color: var(--color-background-alt);
-  direction: rtl;
 }
 
 .services__container {
   width: 100%;
+}
+
+.services__heading {
+  text-align: center;
 }
 
 .services__title {
@@ -13,20 +16,102 @@
   color: var(--color-dark);
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 800;
-  text-align: center;
 }
 
 .services__subtitle {
-  margin: 14px 0 50px;
+  margin: 14px 0 45px;
   color: var(--color-primary);
   font-size: clamp(18px, 2.5vw, 26px);
   font-weight: 700;
+}
+
+/* Большой блок упаковки */
+
+.featured-service {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  align-items: center;
+  gap: 34px;
+  width: 100%;
+  margin-bottom: 34px;
+  padding: 34px 42px;
+  background-color: var(--color-white);
+  border: 1px solid rgba(245, 130, 32, 0.3);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.featured-service:hover {
+  transform: translateY(-5px);
+  border-color: rgba(245, 130, 32, 0.55);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.featured-service__icon-wrapper {
+  display: flex;
+  width: 170px;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease;
+}
+
+.featured-service__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.featured-service:hover
+  .featured-service__icon-wrapper {
+  transform: scale(1.06);
+}
+
+.featured-service:hover .featured-service__image {
+  filter: drop-shadow(
+    0 12px 14px rgba(245, 130, 32, 0.22)
+  );
+}
+
+.featured-service__content {
+  min-width: 0;
   text-align: center;
 }
 
+.featured-service__title {
+  margin: 0 0 16px;
+  color: var(--color-dark);
+  font-size: clamp(25px, 3vw, 36px);
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.featured-service__description {
+  max-width: 950px;
+  margin: 0 auto;
+  color: var(--color-text-muted);
+  font-size: clamp(16px, 1.7vw, 19px);
+  line-height: 1.9;
+  font-weight: 500;
+}
+
+/* Обычные карточки */
+
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
   gap: 30px;
 }
 
@@ -65,6 +150,7 @@
 }
 
 .service-card__image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -73,16 +159,19 @@
     filter 0.35s ease;
 }
 
-.service-card:hover .service-card__icon-wrapper {
+.service-card:hover
+  .service-card__icon-wrapper {
   transform: scale(1.1);
 }
 
 .service-card:hover .service-card__image {
-  filter: drop-shadow(0 10px 12px rgba(245, 130, 32, 0.22));
+  filter: drop-shadow(
+    0 10px 12px rgba(245, 130, 32, 0.22)
+  );
 }
 
 .service-card__title {
-  max-width: 260px;
+  max-width: 280px;
   margin: 0;
   color: var(--color-dark);
   font-size: 21px;
@@ -90,20 +179,60 @@
   font-weight: 800;
 }
 
+/* Планшеты */
+
 @media (max-width: 950px) {
+  .featured-service {
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 24px;
+    padding: 30px;
+  }
+
+  .featured-service__icon-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+
   .services__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
   }
 }
 
-@media (max-width: 560px) {
+/* Телефоны */
+
+@media (max-width: 650px) {
+  .services__subtitle {
+    margin-bottom: 32px;
+  }
+
+  .featured-service {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 24px;
+    padding: 26px 20px;
+  }
+
+  .featured-service__icon-wrapper {
+    width: 125px;
+    height: 125px;
+  }
+
+  .featured-service__title {
+    margin-bottom: 12px;
+  }
+
+  .featured-service__description {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
   .services__grid {
     grid-template-columns: 1fr;
     gap: 18px;
-  }
-
-  .services__subtitle {
-    margin-bottom: 35px;
   }
 
   .service-card {
