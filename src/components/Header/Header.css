@@ -296,13 +296,20 @@
 
   /* Телефон по центру */
 
-  .header__phone {
-    display: block;
-    order: 2;
-    margin: 0 auto;
-    padding: 10px 14px;
-    font-size: 14px;
-  }
+.header__phone {
+  display: flex;
+  width: 190px;
+  min-height: 48px;
+  order: 2;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 14px;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+}
 
   /* Логотип справа */
 
@@ -489,8 +496,8 @@
   }
 
   .header__phone {
-    padding: 9px 10px;
-    font-size: 13px;
+    padding: 9px 9px;
+    font-size: 16px;
   }
 
   .header__logo-image {

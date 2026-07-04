@@ -1,4 +1,12 @@
+.about,
+.about *,
+.about *::before,
+.about *::after {
+  box-sizing: border-box;
+}
+
 .about {
+  width: 100%;
   padding-block: var(--section-padding);
   overflow: hidden;
   background-color: var(--color-background);
@@ -7,10 +15,16 @@
 
 .about__container {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  width: min(1200px, calc(100% - 40px));
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(300px, 0.85fr);
   align-items: center;
   gap: 70px;
+  margin: 0 auto;
 }
+
+/* Текстовая часть */
 
 .about__content {
   min-width: 0;
@@ -28,8 +42,8 @@
   margin: 0 0 25px;
   color: var(--color-dark);
   font-size: clamp(34px, 4vw, 50px);
-  line-height: 1.15;
   font-weight: 800;
+  line-height: 1.15;
 }
 
 .about__text {
@@ -39,6 +53,8 @@
   font-size: 18px;
   line-height: 1.8;
 }
+
+/* Преимущества */
 
 .about__advantages {
   display: grid;
@@ -56,35 +72,43 @@
   background-color: var(--color-background-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-card);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .about-advantage:hover {
-  transform: translateY(-5px);
   background-color: var(--color-white);
-  border-color: rgba(245, 130, 32, 0.3);
+  border-color: rgba(245, 130, 32, 0.35);
   box-shadow: var(--shadow-card-hover);
+  transform: translateY(-5px);
 }
 
 .about-advantage__icon {
   display: flex;
-  flex: 0 0 52px;
   width: 52px;
   height: 52px;
+  flex: 0 0 52px;
   align-items: center;
   justify-content: center;
   color: var(--color-white);
   background-color: var(--color-primary);
   border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(245, 130, 32, 0.25);
+}
+
+.about-advantage__content {
+  min-width: 0;
 }
 
 .about-advantage__title {
   margin: 0 0 6px;
   color: var(--color-dark);
   font-size: 18px;
+  font-weight: 800;
   line-height: 1.35;
 }
 
@@ -95,65 +119,47 @@
   line-height: 1.55;
 }
 
+/* Кнопка */
+
 .about__button {
-
   display: inline-flex;
+  min-height: 52px;
   align-items: center;
- justify-content: center;
-
+  justify-content: center;
   margin-top: 35px;
-
-  padding: 14px 30px;
-
+  padding: 0 30px;
   color: var(--color-white);
-
   font-family: inherit;
-
   font-size: 18px;
-
   font-weight: 800;
-
   line-height: 1.2;
-
   text-align: center;
-
   text-decoration: none;
-
   background-color: var(--color-primary);
-
   border: 0;
-
   border-radius: 999px;
-
-  cursor: pointer;
-
-  box-sizing: border-box;
-
   box-shadow: 0 10px 24px rgba(245, 130, 32, 0.28);
-
+  cursor: pointer;
   transition:
-
     transform 0.25s ease,
-
     box-shadow 0.25s ease,
-
     background-color 0.25s ease;
-
 }
 
 .about__button:hover {
-
   color: var(--color-white);
-
   text-decoration: none;
-
-  transform: translateY(-3px);
-
   background-color: var(--color-primary-hover);
-
   box-shadow: 0 14px 28px rgba(245, 130, 32, 0.38);
-
+  transform: translateY(-3px);
 }
+
+.about__button:focus-visible {
+  outline: 3px solid rgba(245, 130, 32, 0.35);
+  outline-offset: 4px;
+}
+
+/* Визуальная часть */
 
 .about__visual {
   position: relative;
@@ -171,7 +177,7 @@
   aspect-ratio: 1;
   background-color: rgba(245, 130, 32, 0.1);
   border-radius: 50%;
-  content: "";
+  content: '';
 }
 
 .about__visual::after {
@@ -182,8 +188,8 @@
   height: 110px;
   background-color: rgba(16, 42, 67, 0.08);
   border-radius: 30px;
+  content: '';
   transform: rotate(20deg);
-  content: "";
 }
 
 .about__image-wrapper {
@@ -195,12 +201,15 @@
   align-items: center;
   justify-content: center;
   padding: 50px;
+  overflow: hidden;
   background-color: var(--color-background-alt);
+  border: 1px solid var(--color-border);
   border-radius: 40px;
   box-shadow: 0 25px 60px rgba(16, 42, 67, 0.16);
 }
 
 .about__image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -234,6 +243,8 @@
   font-weight: 700;
 }
 
+/* Планшеты */
+
 @media (max-width: 950px) {
   .about__container {
     grid-template-columns: 1fr;
@@ -254,32 +265,181 @@
     text-align: right;
   }
 
+  .about__visual {
+    order: -1;
+  }
+
   .about__experience {
     right: calc(50% - 240px);
   }
 }
 
-@media (max-width: 620px) {
-  .about__advantages {
-    grid-template-columns: 1fr;
+/* Телефоны */
+
+@media (max-width: 650px) {
+  .about {
+    padding: 45px 0;
+    background-color: var(--color-background-alt);
+  }
+
+  .about__container {
+    display: block;
+    width: calc(100% - 20px);
+  }
+
+  .about__content {
+    width: 100%;
+    padding: 34px 20px 28px;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    box-shadow: 0 14px 35px rgba(16, 42, 67, 0.12);
+  }
+
+  .about__label {
+    margin-bottom: 12px;
+    font-size: 17px;
+  }
+
+  .about__title {
+    max-width: 100%;
+    margin: 0 auto 22px;
+    font-size: clamp(28px, 8vw, 34px);
+    line-height: 1.25;
   }
 
   .about__text {
+    max-width: 100%;
+    margin: 0 auto 16px;
     font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .about__advantages {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .about-advantage {
+    width: 100%;
+    padding: 16px;
+    text-align: right;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(16, 42, 67, 0.08);
+  }
+
+  .about-advantage:hover {
+    transform: none;
+  }
+
+  .about-advantage__icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .about-advantage__title {
+    font-size: 17px;
+  }
+
+  .about-advantage__text {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .about__button {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 28px;
+    padding: 0 20px;
+    font-size: 17px;
   }
 
   .about__visual {
-    min-height: 360px;
+    min-height: 0;
+    margin-bottom: 24px;
+  }
+
+  .about__visual::before,
+  .about__visual::after {
+    display: none;
   }
 
   .about__image-wrapper {
-    width: min(330px, 90%);
-    padding: 35px;
-    border-radius: 30px;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 1.45 / 1;
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: 28px;
+    box-shadow: 0 14px 35px rgba(16, 42, 67, 0.12);
+  }
+
+  .about__image {
+    max-width: 230px;
+    margin: 0 auto;
   }
 
   .about__experience {
-    right: 5px;
-    bottom: 15px;
+    right: 12px;
+    bottom: 12px;
+    min-width: 112px;
+    padding: 14px 17px;
+    border-width: 4px;
+    border-radius: 18px;
+  }
+
+  .about__experience strong {
+    font-size: 30px;
+  }
+
+  .about__experience span {
+    margin-top: 5px;
+    font-size: 13px;
+  }
+}
+
+/* Очень узкие экраны */
+
+@media (max-width: 380px) {
+  .about {
+    padding: 35px 0;
+  }
+
+  .about__container {
+    width: calc(100% - 14px);
+  }
+
+  .about__content {
+    padding: 30px 15px 24px;
+    border-radius: 24px;
+  }
+
+  .about__title {
+    font-size: 27px;
+  }
+
+  .about__text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about__image-wrapper {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .about-advantage {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .about-advantage__icon {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
   }
 }

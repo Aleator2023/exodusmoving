@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import truckImage from '../../assets/hero/truck-israel.jpg';
-import packingImage from '../../assets/hero/packing-service.jpg';
-import apartmentImage from '../../assets/hero/apartment-moving.jpg';
-import furnitureImage from '../../assets/hero/razborka.jpg';
-import craneImage from '../../assets/hero/kran.jpg';
-
+import truckImage from '../../assets/hero/truck-israel.webp';
+import packingImage from '../../assets/hero/packing-service.webp';
+import apartmentImage from '../../assets/hero/apartment-moving.webp';
+import furnitureImage from '../../assets/hero/razborka.webp';
+import craneImage from '../../assets/hero/kran.webp';
 import './HeroSlider.css';
 
 const slidesTranslations = {

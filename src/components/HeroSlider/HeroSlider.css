@@ -164,65 +164,99 @@
 
 @media (max-width: 768px) {
   .hero-slider {
-    height: 650px;
-    min-height: 650px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 12px 14px 32px;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .hero-slider__container {
+    width: 100%;
+    height: clamp(460px, 105vw, 560px);
+    min-height: 0;
+    border-radius: 18px;
   }
 
   .hero-slider__overlay {
-    background-color: rgba(16, 42, 67, 0.28);
+    background: rgba(16, 42, 67, 0.42);
+  }
+
+  .hero-slider__content-wrapper {
+    padding: 30px 24px 55px;
+    box-sizing: border-box;
   }
 
   .hero-slider__content {
+    width: 100%;
     max-width: 100%;
     margin: 0;
     text-align: center;
   }
 
+  .hero-slider__brand {
+    margin-bottom: 12px;
+  }
+
+  .hero-slider__title {
+    font-size: clamp(36px, 9vw, 52px);
+    line-height: 1.1;
+  }
+
   .hero-slider__description {
-    margin-right: auto;
-    margin-left: auto;
+    max-width: 430px;
+    margin: 18px auto 0;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .hero-slider__button {
+    min-height: 50px;
+    margin-top: 24px;
+    padding: 0 22px;
+    font-size: 16px;
+  }
+
+  .hero-slider__dots {
+    bottom: 22px;
   }
 
   .hero-slider__arrow {
-    width: 42px;
-    height: 42px;
-    font-size: 30px;
-  }
-
-  .hero-slider__arrow--previous {
-    left: 10px;
-  }
-
-  .hero-slider__arrow--next {
-    right: 10px;
+    display: none;
   }
 }
 
 @media (max-width: 520px) {
   .hero-slider {
-    height: 590px;
-    min-height: 590px;
+    padding: 10px 10px 28px;
+  }
+
+  .hero-slider__container {
+    height: 500px;
+    border-radius: 16px;
+  }
+
+  .hero-slider__content-wrapper {
+    padding: 25px 18px 50px;
   }
 
   .hero-slider__brand {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .hero-slider__title {
-    font-size: 42px;
+    font-size: 38px;
   }
 
   .hero-slider__description {
-    font-size: 17px;
-  }
-
-  .hero-slider__button {
-    min-height: 50px;
-    padding: 0 22px;
     font-size: 16px;
   }
 
-  .hero-slider__arrow {
-    display: none;
-  } 
-} 
+  .hero-slider__button {
+    min-height: 48px;
+    margin-top: 20px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+}

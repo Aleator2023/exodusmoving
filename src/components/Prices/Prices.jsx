@@ -1,12 +1,12 @@
 import {
   Package,
+  PackageOpen,
   BedSingle,
   DoorOpen,
   House,
   Building2,
   Warehouse,
   Wrench,
-  Construction,
 } from 'lucide-react';
 
 import './Prices.css';
@@ -18,6 +18,7 @@ const pricesTranslations = {
     intro: 'מחירים התחלתיים לשירותי ההובלה הנפוצים ביותר',
     from: 'החל מ־',
     currencyLabel: 'שקלים',
+    saleLabel: 'מחיר מבצע',
     note:
       '* המחיר הסופי נקבע לפי כמות התכולה, המרחק, הקומה, הגישה לבניין ושירותים נוספים.',
     button: 'לקבלת הצעת מחיר',
@@ -27,55 +28,54 @@ const pricesTranslations = {
     items: [
       {
         id: 1,
+        Icon: PackageOpen,
+        title: 'שירותי אריזת הבית בארגזים',
+        oldPrice: 40,
+        price: 35,
+        suffix: 'לארגז',
+        isSale: true,
+      },
+      {
+        id: 2,
         Icon: Package,
         title: 'הובלת פריט בודד',
         price: 300,
       },
       {
-        id: 2,
+        id: 3,
         Icon: BedSingle,
         title: 'דירת חדר / סטודיו',
         price: 1000,
       },
       {
-        id: 3,
+        id: 4,
         Icon: DoorOpen,
         title: 'דירת 2 חדרים',
         price: 1800,
       },
       {
-        id: 4,
+        id: 5,
         Icon: House,
         title: 'דירת 3 חדרים',
         price: 2600,
       },
       {
-        id: 5,
+        id: 6,
         Icon: Building2,
         title: 'דירת 4 חדרים',
         price: 3400,
       },
       {
-        id: 6,
+        id: 7,
         Icon: Warehouse,
         title: 'דירת 5 חדרים',
-        
         price: 4200,
       },
       {
-        id: 7,
+        id: 8,
         Icon: Wrench,
         title: 'פירוק והרכבת רהיטים',
-        
         price: 150,
-      },
-      {
-        id: 8,
-        Icon: Construction,
-        title: 'שירותי מנוף עד קומה 4',
-        
-        price: 500,
-        suffix: 'לשעה',
       },
     ],
   },
@@ -87,6 +87,7 @@ const pricesTranslations = {
       'Начальные цены на самые популярные услуги по перевозке',
     from: 'от',
     currencyLabel: 'шекелей',
+    saleLabel: 'Акционная цена',
     note:
       '* Окончательная цена зависит от объёма имущества, расстояния, этажа, доступа к зданию и дополнительных услуг.',
     button: 'Получить предложение',
@@ -96,60 +97,54 @@ const pricesTranslations = {
     items: [
       {
         id: 1,
-        Icon: Package,
-        title: 'Перевозка одного предмета',
-        
-        price: 300,
+        Icon: PackageOpen,
+        title: 'Упаковка домашних вещей в коробки',
+        oldPrice: 40,
+        price: 35,
+        suffix: 'за коробку',
+        isSale: true,
       },
       {
         id: 2,
-        Icon: BedSingle,
-        title: 'Однокомнатная квартира / студия',
-        
-        price: 1000,
+        Icon: Package,
+        title: 'Перевозка одного предмета',
+        price: 300,
       },
       {
         id: 3,
-        Icon: DoorOpen,
-        title: 'Двухкомнатная квартира',
-       
-        price: 1800,
+        Icon: BedSingle,
+        title: 'Однокомнатная квартира / студия',
+        price: 1000,
       },
       {
         id: 4,
-        Icon: House,
-        title: 'Трёхкомнатная квартира',
-        
-        price: 2600,
+        Icon: DoorOpen,
+        title: 'Двухкомнатная квартира',
+        price: 1800,
       },
       {
         id: 5,
-        Icon: Building2,
-        title: 'Четырёхкомнатная квартира',
-       
-        price: 3400,
+        Icon: House,
+        title: 'Трёхкомнатная квартира',
+        price: 2600,
       },
       {
         id: 6,
-        Icon: Warehouse,
-        title: 'Пятикомнатная квартира',
-       
-        price: 4200,
+        Icon: Building2,
+        title: 'Четырёхкомнатная квартира',
+        price: 3400,
       },
       {
         id: 7,
-        Icon: Wrench,
-        title: 'Разборка и сборка мебели',
-        
-        price: 150,
+        Icon: Warehouse,
+        title: 'Пятикомнатная квартира',
+        price: 4200,
       },
       {
         id: 8,
-        Icon: Construction,
-        title: 'Услуги крана до 4 этажа',
-        
-        price: 500,
-        suffix: 'в час',
+        Icon: Wrench,
+        title: 'Разборка и сборка мебели',
+        price: 150,
       },
     ],
   },
@@ -161,6 +156,7 @@ const pricesTranslations = {
       'Starting prices for our most popular moving services',
     from: 'from',
     currencyLabel: 'shekels',
+    saleLabel: 'Special price',
     note:
       '* The final price depends on the volume of belongings, distance, floor, building access and additional services.',
     button: 'Get a Quote',
@@ -170,60 +166,54 @@ const pricesTranslations = {
     items: [
       {
         id: 1,
-        Icon: Package,
-        title: 'Single Item Move',
-       
-        price: 300,
+        Icon: PackageOpen,
+        title: 'Packing Household Items into Boxes',
+        oldPrice: 40,
+        price: 35,
+        suffix: 'per box',
+        isSale: true,
       },
       {
         id: 2,
-        Icon: BedSingle,
-        title: 'One-Room Apartment / Studio',
-        
-        price: 1000,
+        Icon: Package,
+        title: 'Single Item Move',
+        price: 300,
       },
       {
         id: 3,
-        Icon: DoorOpen,
-        title: 'Two-Room Apartment',
-       
-        price: 1800,
+        Icon: BedSingle,
+        title: 'One-Room Apartment / Studio',
+        price: 1000,
       },
       {
         id: 4,
-        Icon: House,
-        title: 'Three-Room Apartment',
-       
-        price: 2600,
+        Icon: DoorOpen,
+        title: 'Two-Room Apartment',
+        price: 1800,
       },
       {
         id: 5,
-        Icon: Building2,
-        title: 'Four-Room Apartment',
-       
-        price: 3400,
+        Icon: House,
+        title: 'Three-Room Apartment',
+        price: 2600,
       },
       {
         id: 6,
-        Icon: Warehouse,
-        title: 'Five-Room Apartment',
-       
-        price: 4200,
+        Icon: Building2,
+        title: 'Four-Room Apartment',
+        price: 3400,
       },
       {
         id: 7,
-        Icon: Wrench,
-        title: 'Furniture Disassembly and Assembly',
-       
-        price: 150,
+        Icon: Warehouse,
+        title: 'Five-Room Apartment',
+        price: 4200,
       },
       {
         id: 8,
-        Icon: Construction,
-        title: 'Crane Services up to Floor 4',
-      
-        price: 500,
-        suffix: 'per hour',
+        Icon: Wrench,
+        title: 'Furniture Disassembly and Assembly',
+        price: 150,
       },
     ],
   },
@@ -277,14 +267,23 @@ export default function Prices({ language = 'he' }) {
               id,
               Icon,
               title,
-              description,
+              oldPrice,
               price,
               suffix,
+              isSale,
             }) => (
               <article
-                className="price-card"
+                className={`price-card${
+                  isSale ? ' price-card--sale' : ''
+                }`}
                 key={id}
               >
+                {isSale && (
+                  <span className="price-card__sale-label">
+                    {content.saleLabel}
+                  </span>
+                )}
+
                 <div className="price-card__icon">
                   <Icon
                     size={27}
@@ -297,18 +296,30 @@ export default function Prices({ language = 'he' }) {
                   <h3 className="price-card__title">
                     {title}
                   </h3>
-
-                  <p className="price-card__description">
-                    {description}
-                  </p>
                 </div>
 
                 <div className="price-card__price">
-                  <span className="price-card__from">
-                    {content.from}
-                  </span>
+                    {!isSale && (
+                   <span className="price-card__from">
+                   {content.from}
+                   </span>
+)}
+                  {oldPrice && (
+                    <span
+                      className="price-card__old-price"
+                      aria-label={`${oldPrice} ${content.currencyLabel}`}
+                    >
+                      <bdi>
+                        {oldPrice.toLocaleString(
+                          content.locale,
+                        )}
+                      </bdi>
 
-                  <strong>
+                      <span aria-hidden="true"> ₪</span>
+                    </span>
+                  )}
+
+                  <strong className="price-card__current-price">
                     <bdi>
                       {price.toLocaleString(content.locale)}
                     </bdi>
