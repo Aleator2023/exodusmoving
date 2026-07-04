@@ -19,19 +19,19 @@ const aboutTranslations = {
     ],
     advantages: [
       {
-        id: 1,
-        Icon: Award,
-        title: 'ניסיון ומקצועיות',
-        description:
-          'צוות מנוסה המבצע כל הובלה בצורה מקצועית, מסודרת ובטוחה.',
+  id: 1,
+  Icon: Award,
+  title: 'נסיון ומקצועיות',
+  description:
+    'כל הובלה מתבצעת על ידי צוות מקצועי וקבוע בצורה מסודרת ובטוחה.',
       },
-      {
-        id: 2,
-        Icon: ShieldCheck,
-        title: 'אחריות וביטחון',
-        description:
-          'אנחנו שומרים על הרכוש שלכם לאורך כל תהליך ההובלה.',
-      },
+{
+  id: 2,
+  Icon: ShieldCheck,
+  title: 'מעבר בית בראש שקט',
+  description:
+    'אנחנו שומרים על הרכוש שלכם לאורך כל תהליך ההובלה.',
+},
       {
         id: 3,
         Icon: Clock3,

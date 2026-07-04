@@ -29,7 +29,7 @@ const pricesTranslations = {
       {
         id: 1,
         Icon: PackageOpen,
-        title: 'שירותי אריזת הבית בארגזים',
+        title: 'שירותי אריזת הבית',
         oldPrice: 40,
         price: 35,
         suffix: 'לארגז',
@@ -37,45 +37,45 @@ const pricesTranslations = {
       },
       {
         id: 2,
+        Icon: Wrench,
+        title: 'פירוק והרכבת רהיטים',
+        price: 150,
+      },
+      {
+        id: 3,
         Icon: Package,
         title: 'הובלת פריט בודד',
         price: 300,
       },
       {
-        id: 3,
+        id: 4,
         Icon: BedSingle,
         title: 'דירת חדר / סטודיו',
         price: 1000,
       },
       {
-        id: 4,
+        id: 5,
         Icon: DoorOpen,
         title: 'דירת 2 חדרים',
         price: 1800,
       },
       {
-        id: 5,
+        id: 6,
         Icon: House,
         title: 'דירת 3 חדרים',
         price: 2600,
       },
       {
-        id: 6,
+        id: 7,
         Icon: Building2,
         title: 'דירת 4 חדרים',
         price: 3400,
       },
       {
-        id: 7,
+        id: 8,
         Icon: Warehouse,
         title: 'דירת 5 חדרים',
         price: 4200,
-      },
-      {
-        id: 8,
-        Icon: Wrench,
-        title: 'פירוק והרכבת רהיטים',
-        price: 150,
       },
     ],
   },
@@ -98,7 +98,7 @@ const pricesTranslations = {
       {
         id: 1,
         Icon: PackageOpen,
-        title: 'Упаковка домашних вещей в коробки',
+        title: 'Упаковка домашних вещей',
         oldPrice: 40,
         price: 35,
         suffix: 'за коробку',
@@ -106,45 +106,45 @@ const pricesTranslations = {
       },
       {
         id: 2,
+        Icon: Wrench,
+        title: 'Разборка и сборка мебели',
+        price: 150,
+      },
+      {
+        id: 3,
         Icon: Package,
         title: 'Перевозка одного предмета',
         price: 300,
       },
       {
-        id: 3,
+        id: 4,
         Icon: BedSingle,
         title: 'Однокомнатная квартира / студия',
         price: 1000,
       },
       {
-        id: 4,
+        id: 5,
         Icon: DoorOpen,
         title: 'Двухкомнатная квартира',
         price: 1800,
       },
       {
-        id: 5,
+        id: 6,
         Icon: House,
         title: 'Трёхкомнатная квартира',
         price: 2600,
       },
       {
-        id: 6,
+        id: 7,
         Icon: Building2,
         title: 'Четырёхкомнатная квартира',
         price: 3400,
       },
       {
-        id: 7,
+        id: 8,
         Icon: Warehouse,
         title: 'Пятикомнатная квартира',
         price: 4200,
-      },
-      {
-        id: 8,
-        Icon: Wrench,
-        title: 'Разборка и сборка мебели',
-        price: 150,
       },
     ],
   },
@@ -167,7 +167,7 @@ const pricesTranslations = {
       {
         id: 1,
         Icon: PackageOpen,
-        title: 'Packing Household Items into Boxes',
+        title: 'Home Packing Services',
         oldPrice: 40,
         price: 35,
         suffix: 'per box',
@@ -175,45 +175,45 @@ const pricesTranslations = {
       },
       {
         id: 2,
+        Icon: Wrench,
+        title: 'Furniture Disassembly and Assembly',
+        price: 150,
+      },
+      {
+        id: 3,
         Icon: Package,
         title: 'Single Item Move',
         price: 300,
       },
       {
-        id: 3,
+        id: 4,
         Icon: BedSingle,
         title: 'One-Room Apartment / Studio',
         price: 1000,
       },
       {
-        id: 4,
+        id: 5,
         Icon: DoorOpen,
         title: 'Two-Room Apartment',
         price: 1800,
       },
       {
-        id: 5,
+        id: 6,
         Icon: House,
         title: 'Three-Room Apartment',
         price: 2600,
       },
       {
-        id: 6,
+        id: 7,
         Icon: Building2,
         title: 'Four-Room Apartment',
         price: 3400,
       },
       {
-        id: 7,
+        id: 8,
         Icon: Warehouse,
         title: 'Five-Room Apartment',
         price: 4200,
-      },
-      {
-        id: 8,
-        Icon: Wrench,
-        title: 'Furniture Disassembly and Assembly',
-        price: 150,
       },
     ],
   },
@@ -299,11 +299,12 @@ export default function Prices({ language = 'he' }) {
                 </div>
 
                 <div className="price-card__price">
-                    {!isSale && (
-                   <span className="price-card__from">
-                   {content.from}
-                   </span>
-)}
+                  {!isSale && (
+                    <span className="price-card__from">
+                      {content.from}
+                    </span>
+                  )}
+
                   {oldPrice && (
                     <span
                       className="price-card__old-price"
