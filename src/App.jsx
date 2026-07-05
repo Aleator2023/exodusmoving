@@ -10,6 +10,7 @@ import HeroIntro from './components/HeroIntro/HeroIntro';
 import PhoneButton from './components/PhoneButton/PhoneButton';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import LeadPopup from './components/LeadPopup/LeadPopup';
+import Reviews from './components/Reviews/Reviews';
 
 function App() {
   const [language, setLanguage] = useState(() => {
@@ -35,13 +36,13 @@ function App() {
       <main>
         <HeroIntro language={language} />
         <HeroSlider language={language} />
-
         <Services language={language} />
-
         <About language={language} />
-
         <Prices language={language} />
+        <Reviews language={language} />
       </main>
+
+  
 
       <Footer language={language} />
       <PhoneButton />
