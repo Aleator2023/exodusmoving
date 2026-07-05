@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import HeroIntro from './components/HeroIntro/HeroIntro';
 import PhoneButton from './components/PhoneButton/PhoneButton';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
+import LeadPopup from './components/LeadPopup/LeadPopup';
 
 function App() {
   const [language, setLanguage] = useState(() => {
@@ -45,6 +46,7 @@ function App() {
       <Footer language={language} />
       <PhoneButton />
       <WhatsAppButton />
+      <LeadPopup language={language} />
  
     </div>
   );
