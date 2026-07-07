@@ -1,8 +1,8 @@
 .services {
-  padding-block: var(--section-padding);
+  padding-top: calc(var(--section-padding) - 26px);
+  padding-bottom: calc(var(--section-padding) - 40px);
   background-color: var(--color-background-alt);
 }
-
 .services__container {
   width: 100%;
 }

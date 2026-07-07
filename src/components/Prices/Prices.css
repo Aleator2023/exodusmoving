@@ -7,12 +7,12 @@
 
 .prices {
   width: 100%;
-  padding-block: var(--section-padding);
+  padding-top: 40px;
+  padding-bottom: 60px;
   overflow: hidden;
   background-color: var(--color-background-alt);
   direction: rtl;
 }
-
 .prices__container {
   width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
@@ -290,7 +290,7 @@
 
 @media (max-width: 650px) {
   .prices {
-    padding: 50px 0;
+    padding: 20px 0;
   }
 
   .prices__container {

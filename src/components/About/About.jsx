@@ -17,36 +17,36 @@ const aboutTranslations = {
       'אקסודוס הובלות מספקת שירותי הובלה מקצועיים לדירות, משרדים ועסקים במרכז הארץ. אנחנו מלווים את הלקוחות שלנו לאורך כל התהליך - משלב התכנון והאריזה ועד להובלה, לפריקה ולהרכבת הרהיטים במקום החדש.',
       'המטרה שלנו היא להפוך כל מעבר לחוויה פשוטה, מסודרת ובטוחה. הצוות שלנו עובד בזהירות, באחריות ובשקיפות מלאה, תוך שמירה על הציוד ועל לוחות הזמנים שנקבעו מראש.',
     ],
-    advantages: [
-      {
-  id: 1,
-  Icon: Award,
-  title: 'נסיון ומקצועיות',
-  description:
-    'כל הובלה מתבצעת על ידי צוות מקצועי וקבוע בצורה מסודרת ובטוחה.',
-      },
-{
-  id: 2,
-  Icon: ShieldCheck,
-  title: 'מעבר בית בראש שקט',
-  description:
-    'אנחנו שומרים על הרכוש שלכם לאורך כל תהליך ההובלה.',
-},
-      {
-        id: 3,
-        Icon: Clock3,
-        title: 'עמידה בזמנים',
-        description:
-          'מגיעים בזמן ומבצעים את העבודה במהירות וללא עיכובים מיותרים.',
-      },
-      {
-        id: 4,
-        Icon: HeartHandshake,
-        title: 'שירות אישי',
-        description:
-          'יחס אישי, הקשבה מלאה והתאמת השירות לצרכים שלכם.',
-      },
-    ],
+   advantages: [
+  {
+    id: 1,
+    Icon: ShieldCheck,
+    title: 'מעבר בית בראש שקט',
+    description:
+      'אנחנו שומרים על הרכוש שלכם לאורך כל תהליך ההובלה.',
+  },
+  {
+    id: 2,
+    Icon: HeartHandshake,
+    title: 'שירות אישי',
+    description:
+      'יחס אישי, הקשבה מלאה והתאמת השירות לצרכים שלכם.',
+  },
+  {
+    id: 3,
+    Icon: Award,
+    title: 'נסיון ומקצועיות',
+    description:
+      'כל הובלה מתבצעת על ידי צוות מקצועי וקבוע בצורה מסודרת ובטוחה.',
+  },
+  {
+    id: 4,
+    Icon: Clock3,
+    title: 'עמידה בזמנים',
+    description:
+      'מגיעים בזמן ומבצעים את העבודה במהירות וללא עיכובים מיותרים.',
+  },
+],
     button: 'לקבלת הצעת מחיר',
     buttonLabel: 'לקבלת הצעת מחיר באמצעות WhatsApp',
     experience: 'שנות ניסיון',
@@ -60,35 +60,35 @@ const aboutTranslations = {
       'Наша цель - сделать каждый переезд простым, организованным и безопасным. Наша команда работает аккуратно, ответственно и прозрачно, заботясь о вашем имуществе и соблюдая заранее согласованные сроки',
     ],
     advantages: [
-      {
-        id: 1,
-        Icon: Award,
-        title: 'Опыт и профессионализм',
-        description:
-          'Опытная команда выполняет каждый переезд профессионально, организованно и безопасно',
-      },
-      {
-        id: 2,
-        Icon: ShieldCheck,
-        title: 'Ответственность и безопасность',
-        description:
-          'Мы бережно относимся к вашему имуществу на всех этапах перевозки',
-      },
-      {
-        id: 3,
-        Icon: Clock3,
-        title: 'Соблюдение сроков',
-        description:
-          'Приезжаем вовремя и выполняем работу быстро, без лишних задержек',
-      },
-      {
-        id: 4,
-        Icon: HeartHandshake,
-        title: 'Индивидуальный подход',
-        description:
-          'Внимательно выслушиваем клиента и адаптируем услугу под его потребности',
-      },
-    ],
+  {
+    id: 1,
+    Icon: ShieldCheck,
+    title: 'Ответственность и безопасность',
+    description:
+      'Мы бережно относимся к вашему имуществу на всех этапах перевозки',
+  },
+  {
+    id: 2,
+    Icon: HeartHandshake,
+    title: 'Индивидуальный подход',
+    description:
+      'Внимательно выслушиваем клиента и адаптируем услугу под его потребности',
+  },
+  {
+    id: 3,
+    Icon: Award,
+    title: 'Опыт и профессионализм',
+    description:
+      'Опытная команда выполняет каждый переезд профессионально, организованно и безопасно',
+  },
+  {
+    id: 4,
+    Icon: Clock3,
+    title: 'Соблюдение сроков',
+    description:
+      'Приезжаем вовремя и выполняем работу быстро, без лишних задержек',
+  },
+],
     button: 'Получить предложение',
     buttonLabel: 'Получить предложение через WhatsApp',
     experience: 'лет опыта',
@@ -101,36 +101,36 @@ const aboutTranslations = {
       'Exodus Moving provides professional moving services for apartments, offices and businesses in central Israel. We support our customers throughout the entire process - from planning and packing to transportation, unloading and furniture assembly at the new location',
       'Our goal is to make every move simple, organized and safe. Our team works carefully, responsibly and transparently while protecting your belongings and following the agreed schedule',
     ],
-    advantages: [
-      {
-        id: 1,
-        Icon: Award,
-        title: 'Experience and professionalism',
-        description:
-          'Our experienced team completes every move professionally, efficiently and safely',
-      },
-      {
-        id: 2,
-        Icon: ShieldCheck,
-        title: 'Responsibility and safety',
-        description:
-          'We protect your belongings throughout the entire moving process',
-      },
-      {
-        id: 3,
-        Icon: Clock3,
-        title: 'On-time service',
-        description:
-          'We arrive on time and complete the work quickly without unnecessary delays',
-      },
-      {
-        id: 4,
-        Icon: HeartHandshake,
-        title: 'Personal service',
-        description:
-          'We listen carefully and adapt our services to your individual needs',
-      },
-    ],
+advantages: [
+  {
+    id: 1,
+    Icon: ShieldCheck,
+    title: 'Responsibility and safety',
+    description:
+      'We protect your belongings throughout the entire moving process',
+  },
+  {
+    id: 2,
+    Icon: HeartHandshake,
+    title: 'Personal service',
+    description:
+      'We listen carefully and adapt our services to your individual needs',
+  },
+  {
+    id: 3,
+    Icon: Award,
+    title: 'Experience and professionalism',
+    description:
+      'Our experienced team completes every move professionally, efficiently and safely',
+  },
+  {
+    id: 4,
+    Icon: Clock3,
+    title: 'On-time service',
+    description:
+      'We arrive on time and complete the work quickly without unnecessary delays',
+  },
+],
     button: 'Get a Quote',
     buttonLabel: 'Get a quote via WhatsApp',
     experience: 'years of experience',

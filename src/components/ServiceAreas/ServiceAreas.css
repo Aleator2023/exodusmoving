@@ -1,5 +1,5 @@
 .service-areas {
-  padding-block: 80px;
+  padding-block: 40px;
   background-color: var(--color-background);
 }
 
@@ -54,7 +54,7 @@
 
 @media (max-width: 768px) {
   .service-areas {
-    padding-block: 60px;
+    padding-block: 20px;
   }
 
   .service-areas__title {
