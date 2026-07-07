@@ -11,6 +11,7 @@ import PhoneButton from './components/PhoneButton/PhoneButton';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import LeadPopup from './components/LeadPopup/LeadPopup';
 import Reviews from './components/Reviews/Reviews';
+import ServiceAreas from './components/ServiceAreas/ServiceAreas';
 
 function App() {
   const [language, setLanguage] = useState(() => {
@@ -39,6 +40,7 @@ function App() {
         <Services language={language} />
         <About language={language} />
         <Prices language={language} />
+        <ServiceAreas language={language} />
         <Reviews language={language} />
       </main>
 

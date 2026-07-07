@@ -14,10 +14,14 @@ const translations = {
     services: 'שירותים',
     about: 'אודות',
     prices: 'מחירים',
+    serviceAreas: 'איזורי שירות',
     contacts: 'צור קשר',
     navigationLabel: 'ניווט ראשי',
     languageLabel: 'בחירת שפה',
     menuLabel: 'פתיחת תפריט',
+    phoneLabel: 'התקשרו למספר 053-430-90-87',
+    logoLabel: 'הובלות אקסודוס',
+    logoAlt: 'הובלות אקסודוס',
   },
 
   ru: {
@@ -25,10 +29,14 @@ const translations = {
     services: 'Услуги',
     about: 'О компании',
     prices: 'Цены',
+    serviceAreas: 'Города',
     contacts: 'Контакты',
     navigationLabel: 'Основная навигация',
     languageLabel: 'Выбор языка',
     menuLabel: 'Открыть меню',
+    phoneLabel: 'Позвонить по номеру 053-430-90-87',
+    logoLabel: 'Exodus Moving',
+    logoAlt: 'Exodus Moving',
   },
 
   en: {
@@ -36,10 +44,14 @@ const translations = {
     services: 'Services',
     about: 'About us',
     prices: 'Prices',
+    serviceAreas: 'Service Areas',
     contacts: 'Contacts',
     navigationLabel: 'Main navigation',
     languageLabel: 'Select language',
     menuLabel: 'Open menu',
+    phoneLabel: 'Call 053-430-90-87',
+    logoLabel: 'Exodus Moving',
+    logoAlt: 'Exodus Moving',
   },
 };
 
@@ -92,6 +104,10 @@ function Header({ language, onLanguageChange }) {
     {
       href: '#prices',
       label: text.prices,
+    },
+    {
+      href: '#service-areas',
+      label: text.serviceAreas,
     },
     {
       href: '#contacts',
@@ -172,22 +188,18 @@ function Header({ language, onLanguageChange }) {
   return (
     <header className="header">
       <div className="container header__container">
-        {/* Логотип */}
-
         <a
           className="header__logo"
           href="#home"
-          aria-label="Exodus Moving"
+          aria-label={text.logoLabel}
           onClick={handleNavigationClick}
         >
           <img
             className="header__logo-image"
             src={logo}
-            alt="Exodus Moving"
+            alt={text.logoAlt}
           />
         </a>
-
-        {/* Навигация для компьютера */}
 
         <nav
           className="header__navigation"
@@ -203,8 +215,6 @@ function Header({ language, onLanguageChange }) {
             </a>
           ))}
         </nav>
-
-        {/* Выбор языка для компьютера */}
 
         <div
           className="language-selector language-selector--desktop"
@@ -284,17 +294,13 @@ function Header({ language, onLanguageChange }) {
           )}
         </div>
 
-        {/* Телефон */}
-
         <a
           className="header__phone"
           href="tel:+972534309087"
-          aria-label="Позвонить по номеру 053-430-90-87"
+          aria-label={text.phoneLabel}
         >
           053-430-90-87
         </a>
-
-        {/* Мобильное бургер-меню */}
 
         <div
           className="mobile-menu"
@@ -322,39 +328,35 @@ function Header({ language, onLanguageChange }) {
               className="mobile-menu__panel"
               id="mobile-navigation"
             >
-              {/* Сначала выбор языка */}
+              <div className="mobile-menu__languages">
+                <p className="mobile-menu__title">
+                  {text.languageLabel}
+                </p>
 
-<div className="mobile-menu__languages">
-  <p className="mobile-menu__title">
-    {text.languageLabel}
-  </p>
-
-  <div className="mobile-menu__language-list">
-    {languages.map((item) => (
-      <button
-        key={item.code}
-        className={`mobile-menu__language ${
-          language === item.code
-            ? 'mobile-menu__language--active'
-            : ''
-        }`}
-        type="button"
-        aria-label={item.label}
-        onClick={() =>
-          handleLanguageSelect(item.code)
-        }
-      >
-        <img
-          className="mobile-menu__language-flag"
-          src={item.flag}
-          alt={item.label}
-        />
-      </button>
-    ))}
-  </div>
-</div>
-
-              {/* Затем пункты меню */}
+                <div className="mobile-menu__language-list">
+                  {languages.map((item) => (
+                    <button
+                      key={item.code}
+                      className={`mobile-menu__language ${
+                        language === item.code
+                          ? 'mobile-menu__language--active'
+                          : ''
+                      }`}
+                      type="button"
+                      aria-label={item.label}
+                      onClick={() =>
+                        handleLanguageSelect(item.code)
+                      }
+                    >
+                      <img
+                        className="mobile-menu__language-flag"
+                        src={item.flag}
+                        alt={item.label}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
 
               <nav
                 className="mobile-menu__navigation"
