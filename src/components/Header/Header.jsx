@@ -19,7 +19,7 @@ const translations = {
     navigationLabel: 'ניווט ראשי',
     languageLabel: 'בחירת שפה',
     menuLabel: 'פתיחת תפריט',
-    phoneLabel: 'התקשרו למספר 053-430-90-87',
+    phoneLabel: 'התקשרו למספר 050-762-97-39',
     logoLabel: 'הובלות אקסודוס',
     logoAlt: 'הובלות אקסודוס',
   },
@@ -34,7 +34,7 @@ const translations = {
     navigationLabel: 'Основная навигация',
     languageLabel: 'Выбор языка',
     menuLabel: 'Открыть меню',
-    phoneLabel: 'Позвонить по номеру 053-430-90-87',
+    phoneLabel: 'Позвонить по номеру 050-762-97-39',
     logoLabel: 'Exodus Moving',
     logoAlt: 'Exodus Moving',
   },
@@ -49,7 +49,7 @@ const translations = {
     navigationLabel: 'Main navigation',
     languageLabel: 'Select language',
     menuLabel: 'Open menu',
-    phoneLabel: 'Call 053-430-90-87',
+    phoneLabel: 'Call 050-762-97-39',
     logoLabel: 'Exodus Moving',
     logoAlt: 'Exodus Moving',
   },
@@ -296,10 +296,10 @@ function Header({ language, onLanguageChange }) {
 
         <a
           className="header__phone"
-          href="tel:+972534309087"
+          href="tel:+972507629739"
           aria-label={text.phoneLabel}
         >
-          053-430-90-87
+          050-762-97-39
         </a>
 
         <div

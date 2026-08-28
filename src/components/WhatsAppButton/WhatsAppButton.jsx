@@ -1,7 +1,7 @@
 import './WhatsAppButton.css';
 
 function WhatsAppButton() {
-  const phoneNumber = '972534309087';
+  const phoneNumber = '972507629739';
 
   const message = encodeURIComponent(
     'שלום! אשמח לקבל הצעת מחיר להובלה.',

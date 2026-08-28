@@ -219,7 +219,7 @@ const pricesTranslations = {
   },
 };
 
-const whatsappPhoneNumber = '972534309087';
+const whatsappPhoneNumber = '972507629739';
 
 const whatsappMessage =
   'שלום, אני מעוניין לקבל הצעת מחיר מדויקת להובלה.';

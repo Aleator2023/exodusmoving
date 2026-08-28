@@ -59,7 +59,7 @@ const leadPopupTranslations = {
   },
 };
 
-const whatsappPhoneNumber = '972534309087';
+const whatsappPhoneNumber = '972507629739';
 
 export default function LeadPopup({ language = 'he' }) {
   const content =

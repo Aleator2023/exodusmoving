@@ -4,8 +4,8 @@ function PhoneButton() {
   return (
     <a
       className="phone-button"
-      href="tel:+972534309087"
-      aria-label="התקשרו עכשיו ל-053-430-90-87"
+      href="tel:+972507629739"
+      aria-label="התקשרו עכשיו ל-050-762-97-39"
       title="התקשרו עכשיו"
     >
       <svg

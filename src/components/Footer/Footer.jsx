@@ -109,10 +109,10 @@ function Footer({ language = 'he' }) {
 
             <a
               className="footer__contact-phone"
-              href="tel:+972534309087"
+              href="tel:+972507629739"
               dir="ltr"
             >
-              053-430-90-87
+              050-762-97-39
             </a>
 
             <a
@@ -125,7 +125,7 @@ function Footer({ language = 'he' }) {
 
             <a
               className="footer__contact-whatsapp"
-              href="https://wa.me/972534309087"
+              href="https://wa.me/972507629739"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -143,10 +143,10 @@ function Footer({ language = 'he' }) {
 
             <a
               className="footer__phone"
-              href="tel:+972534309087"
+              href="tel:+972507629739"
               dir="ltr"
             >
-              053-430-90-87
+              050-762-97-39
             </a>
           </div>
         </div>
