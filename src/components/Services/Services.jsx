@@ -5,6 +5,8 @@ import packingImage from '../../assets/icons/packing-services.png';
 import countryImage from '../../assets/icons/nationwide-moving.png';
 import insuranceImage from '../../assets/icons/content-insurance.png';
 import craneImage from '../../assets/icons/crane-services.png';
+import pianoImage from '../../assets/icons/piano-moving.png';
+import truckRentalImage from '../../assets/icons/truck-rental-with-driver.png';
 
 import './Services.css';
 
@@ -57,6 +59,18 @@ const servicesTranslations = {
         title: 'שירותי מנוף',
         image: craneImage,
         alt: 'שירותי הובלה באמצעות מנוף',
+      },
+      {
+        id: 7,
+        title: 'הובלת פסנתרים',
+        image: pianoImage,
+        alt: 'הובלת פסנתרים בצורה בטוחה ומקצועית',
+      },
+      {
+        id: 8,
+        title: 'השכרת משאית עם נהג',
+        image: truckRentalImage,
+        alt: 'השכרת משאית הובלה עם נהג מקצועי',
       },
     ],
   },
@@ -111,6 +125,18 @@ const servicesTranslations = {
         image: craneImage,
         alt: 'Перевозка и подъём имущества с помощью крана',
       },
+      {
+        id: 7,
+        title: 'Перевозка пианино',
+        image: pianoImage,
+        alt: 'Безопасная перевозка пианино и роялей',
+      },
+      {
+        id: 8,
+        title: 'Аренда грузовика с водителем',
+        image: truckRentalImage,
+        alt: 'Аренда грузовика для переезда с водителем',
+      },
     ],
   },
 
@@ -163,6 +189,18 @@ const servicesTranslations = {
         title: 'Crane Moving Services',
         image: craneImage,
         alt: 'Moving and lifting services using a crane',
+      },
+      {
+        id: 7,
+        title: 'Piano Moving',
+        image: pianoImage,
+        alt: 'Safe and professional piano moving',
+      },
+      {
+        id: 8,
+        title: 'Truck Rental with Driver',
+        image: truckRentalImage,
+        alt: 'Moving truck rental with a professional driver',
       },
     ],
   },

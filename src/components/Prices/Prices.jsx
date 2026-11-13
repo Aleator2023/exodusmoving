@@ -4,6 +4,8 @@ import singleItemIcon from '../../assets/icons/movers-carrying-wrapped-furniture
 import studioIcon from '../../assets/icons/studio-apartment.png';
 import apartmentIcon from '../../assets/icons/apartment-moving.png';
 import buildingIcon from '../../assets/icons/office-moving.png';
+import pianoIcon from '../../assets/icons/piano-moving.png';
+import truckRentalIcon from '../../assets/icons/truck-rental-with-driver.png';
 
 import './Prices.css';
 
@@ -42,6 +44,19 @@ const pricesTranslations = {
         icon: singleItemIcon,
         title: 'הובלת פריט בודד',
         price: 300,
+      },
+      {
+        id: 9,
+        icon: truckRentalIcon,
+        title: 'השכרת משאית עם נהג',
+        price: 300,
+        suffix: 'לשעה',
+      },
+      {
+        id: 10,
+        icon: pianoIcon,
+        title: 'הובלת פסנתר',
+        price: 600,
       },
       {
         id: 4,
@@ -113,6 +128,19 @@ const pricesTranslations = {
         price: 300,
       },
       {
+        id: 9,
+        icon: truckRentalIcon,
+        title: 'Аренда грузовика с водителем',
+        price: 300,
+        suffix: 'в час',
+      },
+      {
+        id: 10,
+        icon: pianoIcon,
+        title: 'Перевозка пианино',
+        price: 600,
+      },
+      {
         id: 4,
         icon: studioIcon,
         title: 'Однокомнатная квартира / студия',
@@ -180,6 +208,19 @@ const pricesTranslations = {
         icon: singleItemIcon,
         title: 'Single Item Move',
         price: 300,
+      },
+      {
+        id: 9,
+        icon: truckRentalIcon,
+        title: 'Truck Rental with Driver',
+        price: 300,
+        suffix: 'per hour',
+      },
+      {
+        id: 10,
+        icon: pianoIcon,
+        title: 'Piano Moving',
+        price: 600,
       },
       {
         id: 4,

@@ -108,11 +108,12 @@
 
 .services__grid {
   display: grid;
+  /* 8 услуг: 4 в ряд на компьютере, 2 на планшете — ряды всегда полные */
   grid-template-columns: repeat(
-    3,
+    4,
     minmax(0, 1fr)
   );
-  gap: 30px;
+  gap: 24px;
 }
 
 .service-card {
