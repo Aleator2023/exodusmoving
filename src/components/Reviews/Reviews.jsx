@@ -8,9 +8,13 @@ import {
 import {
   ChevronLeft,
   ChevronRight,
+  Pause,
+  Play,
   Quote,
   Star,
 } from 'lucide-react';
+
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 import './Reviews.css';
 
@@ -25,6 +29,8 @@ const reviewsTranslations = {
     reviewsCountText: 'ביקורות',
     previous: 'ביקורת קודמת',
     next: 'ביקורת הבאה',
+    pause: 'עצירת החלפת הביקורות',
+    play: 'הפעלת החלפת הביקורות',
     loading: 'טוען ביקורות...',
     fallbackName: 'לקוח Google',
     noReviews: 'בקרוב יוצגו כאן ביקורות Google.',
@@ -40,6 +46,8 @@ const reviewsTranslations = {
     reviewsCountText: 'отзывов',
     previous: 'Предыдущий отзыв',
     next: 'Следующий отзыв',
+    pause: 'Остановить смену отзывов',
+    play: 'Включить смену отзывов',
     loading: 'Загружаем отзывы...',
     fallbackName: 'Пользователь Google',
     noReviews: 'Скоро здесь появятся отзывы Google.',
@@ -55,6 +63,8 @@ const reviewsTranslations = {
     reviewsCountText: 'reviews',
     previous: 'Previous review',
     next: 'Next review',
+    pause: 'Pause reviews',
+    play: 'Play reviews',
     loading: 'Loading reviews...',
     fallbackName: 'Google User',
     noReviews: 'Google reviews will appear here soon.',
@@ -172,7 +182,11 @@ export default function Reviews({ language = 'he' }) {
     return Number(googleData.rating).toFixed(1);
   }, [googleData.rating]);
 
-  const isAutoplayEnabled = useMediaQuery(AUTOPLAY_MEDIA_QUERY);
+  const isAutoplayScreen = useMediaQuery(AUTOPLAY_MEDIA_QUERY);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [isPausedByUser, setIsPausedByUser] = useState(false);
+  const isAutoplayEnabled =
+    isAutoplayScreen && !prefersReducedMotion && !isPausedByUser;
 
   useEffect(() => {
     if (!isAutoplayEnabled || reviewsCount <= 1) {
@@ -372,6 +386,28 @@ export default function Reviews({ language = 'he' }) {
 
                 {reviewsCount > 1 && (
                   <div className="reviews__dots">
+                    {isAutoplayScreen && !prefersReducedMotion && (
+                      <button
+                        className="reviews__pause"
+                        type="button"
+                        aria-label={
+                          isPausedByUser ? content.play : content.pause
+                        }
+                        aria-pressed={isPausedByUser}
+                        onClick={() =>
+                          setIsPausedByUser(
+                            (currentValue) => !currentValue,
+                          )
+                        }
+                      >
+                        {isPausedByUser ? (
+                          <Play size={13} fill="currentColor" aria-hidden="true" />
+                        ) : (
+                          <Pause size={13} fill="currentColor" aria-hidden="true" />
+                        )}
+                      </button>
+                    )}
+
                     {reviews.map((review, index) => (
                       <button
                         className={`reviews__dot${
@@ -423,6 +459,7 @@ export default function Reviews({ language = 'he' }) {
 
             <div
               className="reviews__stars"
+              role="img"
               aria-label={`${roundedRating} stars`}
             >
               {Array.from({ length: 5 }).map((_, index) => (

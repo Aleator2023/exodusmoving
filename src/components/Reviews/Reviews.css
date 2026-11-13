@@ -231,7 +231,7 @@
   background: linear-gradient(
     135deg,
     var(--color-primary),
-    #ffa266
+    var(--color-primary-hover)
   );
   color: var(--color-white);
   font-size: 22px;
@@ -290,6 +290,7 @@
 
 .reviews__dots {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 8px;
   margin-top: 22px;
@@ -415,4 +416,19 @@
     width: 100%;
     max-width: 260px;
   }
+}
+/* Кнопка паузы отзывов (видна там, где отзывы листаются сами) */
+
+.reviews__pause {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  margin-inline-end: 6px;
+  padding: 0;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
 }

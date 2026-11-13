@@ -83,7 +83,7 @@
 
 .hero-slider__brand {
   margin: 0 0 18px;
-  color: var(--color-primary);
+  color: var(--color-primary-bright);
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -145,6 +145,7 @@
   bottom: 28px;
   left: 50%;
   display: flex;
+  align-items: center;
   gap: 10px;
   transform: translateX(-50%);
 }
@@ -261,4 +262,24 @@
     padding: 0 20px;
     font-size: 16px;
   }
+}
+/* Кнопка паузы слайдера (доступность: возможность остановить смену слайдов) */
+
+.hero-slider__pause {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  margin-inline-end: 4px;
+  padding: 0;
+  color: var(--color-white);
+  background-color: rgba(22, 24, 29, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hero-slider__pause:hover {
+  background-color: rgba(22, 24, 29, 0.8);
 }

@@ -12,6 +12,13 @@ import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import LeadPopup from './components/LeadPopup/LeadPopup';
 import Reviews from './components/Reviews/Reviews';
 import ServiceAreas from './components/ServiceAreas/ServiceAreas';
+import LegalDialog from './components/LegalDialog/LegalDialog';
+
+const skipLinkText = {
+  he: 'דילוג לתוכן הראשי',
+  ru: 'Перейти к основному содержанию',
+  en: 'Skip to main content',
+};
 
 function App() {
   const [language, setLanguage] = useState(() => {
@@ -29,12 +36,16 @@ function App() {
 
   return (
     <div className="site-wrapper">
+      <a className="skip-link" href="#main-content">
+        {skipLinkText[language] ?? skipLinkText.he}
+      </a>
+
       <Header
         language={language}
         onLanguageChange={setLanguage}
       />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <HeroIntro language={language} />
         <HeroSlider language={language} />
         <Reviews language={language} />
@@ -50,6 +61,7 @@ function App() {
       <PhoneButton />
       <WhatsAppButton />
       <LeadPopup language={language} />
+      <LegalDialog language={language} />
  
     </div>
   );

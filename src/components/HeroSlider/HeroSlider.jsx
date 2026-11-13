@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import { Pause, Play } from 'lucide-react';
+
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 import truckImage from '../../assets/hero/truck-lake-road.webp';
 import packingImage from '../../assets/hero/packing-globe.webp';
@@ -146,6 +149,8 @@ const interfaceTranslations = {
     buttonLabel: 'לקבלת הצעת מחיר באמצעות WhatsApp',
     slidesLabel: 'בחירת שקופית',
     slideLabel: 'שקופית',
+    pause: 'עצירת החלפת השקופיות',
+    play: 'הפעלת החלפת השקופיות',
   },
 
   ru: {
@@ -155,6 +160,8 @@ const interfaceTranslations = {
     buttonLabel: 'Получить предложение в WhatsApp',
     slidesLabel: 'Выбор слайда',
     slideLabel: 'Слайд',
+    pause: 'Остановить смену слайдов',
+    play: 'Включить смену слайдов',
   },
 
   en: {
@@ -164,6 +171,8 @@ const interfaceTranslations = {
     buttonLabel: 'Get a quote via WhatsApp',
     slidesLabel: 'Select slide',
     slideLabel: 'Slide',
+    pause: 'Pause slideshow',
+    play: 'Play slideshow',
   },
 };
 
@@ -172,6 +181,14 @@ const whatsappLink =
 
 function HeroSlider({ language = 'he' }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Autoplay can be paused by the button, by hover/keyboard focus,
+  // and is off for visitors who prefer reduced motion.
+  const [isPausedByUser, setIsPausedByUser] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const isAutoplayActive =
+    !isPausedByUser && !isInteracting && !prefersReducedMotion;
 
   const slides =
     slidesTranslations[language] ?? slidesTranslations.he;
@@ -183,6 +200,10 @@ function HeroSlider({ language = 'he' }) {
   const direction = language === 'he' ? 'rtl' : 'ltr';
 
   useEffect(() => {
+    if (!isAutoplayActive) {
+      return undefined;
+    }
+
     const sliderInterval = window.setInterval(() => {
       setCurrentSlide((previousSlide) =>
         previousSlide === slides.length - 1
@@ -194,7 +215,7 @@ function HeroSlider({ language = 'he' }) {
     return () => {
       window.clearInterval(sliderInterval);
     };
-  }, [slides.length]);
+  }, [slides.length, isAutoplayActive]);
 
   return (
     <section
@@ -202,17 +223,29 @@ function HeroSlider({ language = 'he' }) {
       className="hero-slider"
       aria-label={text.sectionLabel}
     >
-      <div className="hero-slider__container">
+      <div
+        className="hero-slider__container"
+        onMouseEnter={() => setIsInteracting(true)}
+        onMouseLeave={() => setIsInteracting(false)}
+        onFocus={() => setIsInteracting(true)}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            setIsInteracting(false);
+          }
+        }}
+      >
         <div
           className="hero-slider__track"
           style={{
             transform: `translateX(-${currentSlide * 100}%)`,
           }}
         >
-          {slides.map((slide) => (
+          {slides.map((slide, index) => (
             <article
               key={slide.id}
               className="hero-slider__slide"
+              aria-hidden={index !== currentSlide}
+              inert={index !== currentSlide}
             >
               <img
                 className="hero-slider__image"
@@ -259,8 +292,25 @@ function HeroSlider({ language = 'he' }) {
 
         <div
           className="hero-slider__dots"
+          role="group"
           aria-label={text.slidesLabel}
         >
+          <button
+            className="hero-slider__pause"
+            type="button"
+            aria-label={isPausedByUser ? text.play : text.pause}
+            aria-pressed={isPausedByUser}
+            onClick={() =>
+              setIsPausedByUser((currentValue) => !currentValue)
+            }
+          >
+            {isPausedByUser ? (
+              <Play size={14} fill="currentColor" aria-hidden="true" />
+            ) : (
+              <Pause size={14} fill="currentColor" aria-hidden="true" />
+            )}
+          </button>
+
           {slides.map((slide, index) => (
             <button
               key={slide.id}

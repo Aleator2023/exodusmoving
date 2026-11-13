@@ -1,5 +1,10 @@
 import { Link } from 'react-router';
 
+import {
+  LEGAL_HASHES,
+  legalUi,
+} from '../LegalDialog/legalContent';
+
 import './Footer.css';
 
 const footerTranslations = {
@@ -54,6 +59,8 @@ function Footer({ language = 'he' }) {
 
   const content =
     footerTranslations[language] ?? footerTranslations.he;
+
+  const legalText = legalUi[language] ?? legalUi.he;
 
   return (
     <footer
@@ -140,6 +147,19 @@ function Footer({ language = 'he' }) {
               © {currentYear} Exodus Moving.{' '}
               {content.copyright}
             </p>
+
+            <nav
+              className="footer__legal"
+              aria-label={`${legalText.accessibilityLink} / ${legalText.privacyLink}`}
+            >
+              <a href={LEGAL_HASHES.accessibility}>
+                {legalText.accessibilityLink}
+              </a>
+
+              <a href={LEGAL_HASHES.privacy}>
+                {legalText.privacyLink}
+              </a>
+            </nav>
 
             <a
               className="footer__phone"

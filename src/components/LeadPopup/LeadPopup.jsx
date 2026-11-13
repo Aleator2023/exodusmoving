@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
+
+import { LEGAL_HASHES } from '../LegalDialog/legalContent';
 
 import './LeadPopup.css';
 
@@ -20,6 +22,8 @@ const leadPopupTranslations = {
     nameText: 'שם',
     phoneText: 'טלפון',
     dateText: 'תאריך הובלה',
+    consentBefore: 'בשליחת הפרטים אני מאשר/ת את ',
+    consentLink: 'מדיניות הפרטיות',
   },
 
   ru: {
@@ -38,6 +42,8 @@ const leadPopupTranslations = {
     nameText: 'Имя',
     phoneText: 'Телефон',
     dateText: 'Дата перевозки',
+    consentBefore: 'Отправляя данные, я соглашаюсь с ',
+    consentLink: 'политикой конфиденциальности',
   },
 
   en: {
@@ -56,6 +62,8 @@ const leadPopupTranslations = {
     nameText: 'Name',
     phoneText: 'Phone',
     dateText: 'Moving date',
+    consentBefore: 'By sending your details you agree to our ',
+    consentLink: 'privacy policy',
   },
 };
 
@@ -77,6 +85,8 @@ export default function LeadPopup({ language = 'he' }) {
   });
 
   const [errors, setErrors] = useState({});
+
+  const firstFieldRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,6 +121,24 @@ export default function LeadPopup({ language = 'he' }) {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('lead-popup-open');
+      firstFieldRef.current?.focus();
+
+      const handleEscape = (event) => {
+        // The legal dialog handles Escape itself when it is open on top
+        if (
+          event.key === 'Escape' &&
+          !document.body.classList.contains('legal-dialog-open')
+        ) {
+          setIsOpen(false);
+        }
+      };
+
+      document.addEventListener('keydown', handleEscape);
+
+      return () => {
+        document.removeEventListener('keydown', handleEscape);
+        document.body.classList.remove('lead-popup-open');
+      };
     } else {
       document.body.classList.remove('lead-popup-open');
     }
@@ -233,17 +261,25 @@ ${content.dateText}: ${formData.movingDate}`;
         >
           <div className="lead-popup__field">
             <input
+              ref={firstFieldRef}
               className="lead-popup__input"
               type="text"
               name="name"
+              autoComplete="name"
               value={formData.name}
               onChange={handleChange}
               placeholder={content.namePlaceholder}
               aria-label={content.namePlaceholder}
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? 'lead-name-error' : undefined}
             />
 
             {errors.name && (
-              <span className="lead-popup__error">
+              <span
+                className="lead-popup__error"
+                id="lead-name-error"
+                role="alert"
+              >
                 {errors.name}
               </span>
             )}
@@ -254,36 +290,54 @@ ${content.dateText}: ${formData.movingDate}`;
               className="lead-popup__input"
               type="tel"
               name="phone"
+              autoComplete="tel"
               value={formData.phone}
               onChange={handleChange}
               placeholder={content.phonePlaceholder}
               aria-label={content.phonePlaceholder}
+              aria-invalid={Boolean(errors.phone)}
+              aria-describedby={errors.phone ? 'lead-phone-error' : undefined}
             />
 
             {errors.phone && (
-              <span className="lead-popup__error">
+              <span
+                className="lead-popup__error"
+                id="lead-phone-error"
+                role="alert"
+              >
                 {errors.phone}
               </span>
             )}
           </div>
 
           <div className="lead-popup__field">
-            <label className="lead-popup__label">
+            <label
+              className="lead-popup__label"
+              htmlFor="lead-moving-date"
+            >
               {content.dateLabel}
             </label>
 
-                <input
-                className="lead-popup__input"
-                type="date"
-                name="movingDate"
-                value={formData.movingDate}
-                onChange={handleChange}
-                aria-label={content.dateLabel}
-                lang={language === 'he' ? 'he-IL' : language === 'ru' ? 'ru-RU' : 'en-US'}
-                />
+            <input
+              id="lead-moving-date"
+              className="lead-popup__input"
+              type="date"
+              name="movingDate"
+              value={formData.movingDate}
+              onChange={handleChange}
+              aria-invalid={Boolean(errors.movingDate)}
+              aria-describedby={
+                errors.movingDate ? 'lead-date-error' : undefined
+              }
+              lang={language === 'he' ? 'he-IL' : language === 'ru' ? 'ru-RU' : 'en-US'}
+            />
 
             {errors.movingDate && (
-              <span className="lead-popup__error">
+              <span
+                className="lead-popup__error"
+                id="lead-date-error"
+                role="alert"
+              >
                 {errors.movingDate}
               </span>
             )}
@@ -295,6 +349,14 @@ ${content.dateText}: ${formData.movingDate}`;
           >
             {content.button}
           </button>
+
+          <p className="lead-popup__consent">
+            {content.consentBefore}
+            <a href={LEGAL_HASHES.privacy}>
+              {content.consentLink}
+            </a>
+            .
+          </p>
         </form>
       </div>
     </div>

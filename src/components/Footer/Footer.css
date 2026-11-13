@@ -26,7 +26,7 @@
 }
 
 .footer__logo:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-bright);
 }
 
 .footer__description {
@@ -38,7 +38,7 @@
 
 .footer__title {
   margin: 0 0 18px;
-  color: var(--color-primary);
+  color: var(--color-primary-bright);
   font-size: 18px;
   font-weight: 800;
 }
@@ -64,7 +64,7 @@
 
 .footer__navigation a:hover,
 .footer__contacts a:hover {
-  color: var(--color-primary);
+  color: var(--color-primary-bright);
   transform: translateX(-3px);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .footer__phone {
-  color: var(--color-primary);
+  color: var(--color-primary-bright);
   font-size: 16px;
   font-weight: 800;
   text-decoration: none;
@@ -202,4 +202,22 @@
 
   }
 
+}
+/* Ссылки на заявление о доступности и политику конфиденциальности */
+
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.footer__legal a {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer__legal a:hover {
+  color: var(--color-primary-bright);
 }
