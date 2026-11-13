@@ -206,6 +206,18 @@ const servicesTranslations = {
   },
 };
 
+// Checkerboard order on desktop (4 per row): truck icons alternate with the rest.
+// Row 1: apartments · nationwide · offices · crane
+// Row 2: piano · furniture · truck rental · insurance
+const servicesDisplayOrder = [1, 4, 2, 6, 7, 3, 8, 5];
+
+const sortByDisplayOrder = (services) =>
+  [...services].sort(
+    (first, second) =>
+      servicesDisplayOrder.indexOf(first.id) -
+      servicesDisplayOrder.indexOf(second.id),
+  );
+
 export default function Services({ language = 'he' }) {
   const content =
     servicesTranslations[language] ??
@@ -263,7 +275,7 @@ export default function Services({ language = 'he' }) {
         </article>
 
         <div className="services__grid">
-          {content.services.map(
+          {sortByDisplayOrder(content.services).map(
             ({ id, title, image, alt }) => (
               <article
                 className="service-card"
