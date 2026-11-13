@@ -1,13 +1,9 @@
-import {
-  Package,
-  PackageOpen,
-  BedSingle,
-  DoorOpen,
-  House,
-  Building2,
-  Warehouse,
-  Wrench,
-} from 'lucide-react';
+import packingIcon from '../../assets/icons/packing-services.png';
+import assemblyIcon from '../../assets/icons/furniture-assembly.png';
+import singleItemIcon from '../../assets/icons/movers-carrying-wrapped-furniture.png';
+import studioIcon from '../../assets/icons/studio-apartment.png';
+import apartmentIcon from '../../assets/icons/apartment-moving.png';
+import buildingIcon from '../../assets/icons/office-moving.png';
 
 import './Prices.css';
 
@@ -28,7 +24,7 @@ const pricesTranslations = {
     items: [
       {
         id: 1,
-        Icon: PackageOpen,
+        icon: packingIcon,
         title: 'שירותי אריזת הבית',
         oldPrice: 40,
         price: 35,
@@ -37,43 +33,43 @@ const pricesTranslations = {
       },
       {
         id: 2,
-        Icon: Wrench,
+        icon: assemblyIcon,
         title: 'פירוק והרכבת רהיטים',
         price: 150,
       },
       {
         id: 3,
-        Icon: Package,
+        icon: singleItemIcon,
         title: 'הובלת פריט בודד',
         price: 300,
       },
       {
         id: 4,
-        Icon: BedSingle,
+        icon: studioIcon,
         title: 'דירת חדר / סטודיו',
         price: 1000,
       },
       {
         id: 5,
-        Icon: DoorOpen,
+        icon: apartmentIcon,
         title: 'דירת 2 חדרים',
         price: 1800,
       },
       {
         id: 6,
-        Icon: House,
+        icon: apartmentIcon,
         title: 'דירת 3 חדרים',
         price: 2600,
       },
       {
         id: 7,
-        Icon: Building2,
+        icon: buildingIcon,
         title: 'דירת 4 חדרים',
         price: 3400,
       },
       {
         id: 8,
-        Icon: Warehouse,
+        icon: buildingIcon,
         title: 'דירת 5 חדרים',
         price: 4200,
       },
@@ -97,7 +93,7 @@ const pricesTranslations = {
     items: [
       {
         id: 1,
-        Icon: PackageOpen,
+        icon: packingIcon,
         title: 'Упаковка домашних вещей',
         oldPrice: 40,
         price: 35,
@@ -106,43 +102,43 @@ const pricesTranslations = {
       },
       {
         id: 2,
-        Icon: Wrench,
+        icon: assemblyIcon,
         title: 'Разборка и сборка мебели',
         price: 150,
       },
       {
         id: 3,
-        Icon: Package,
+        icon: singleItemIcon,
         title: 'Перевозка одного предмета',
         price: 300,
       },
       {
         id: 4,
-        Icon: BedSingle,
+        icon: studioIcon,
         title: 'Однокомнатная квартира / студия',
         price: 1000,
       },
       {
         id: 5,
-        Icon: DoorOpen,
+        icon: apartmentIcon,
         title: 'Двухкомнатная квартира',
         price: 1800,
       },
       {
         id: 6,
-        Icon: House,
+        icon: apartmentIcon,
         title: 'Трёхкомнатная квартира',
         price: 2600,
       },
       {
         id: 7,
-        Icon: Building2,
+        icon: buildingIcon,
         title: 'Четырёхкомнатная квартира',
         price: 3400,
       },
       {
         id: 8,
-        Icon: Warehouse,
+        icon: buildingIcon,
         title: 'Пятикомнатная квартира',
         price: 4200,
       },
@@ -166,7 +162,7 @@ const pricesTranslations = {
     items: [
       {
         id: 1,
-        Icon: PackageOpen,
+        icon: packingIcon,
         title: 'Home Packing Services',
         oldPrice: 40,
         price: 35,
@@ -175,43 +171,43 @@ const pricesTranslations = {
       },
       {
         id: 2,
-        Icon: Wrench,
+        icon: assemblyIcon,
         title: 'Furniture Disassembly and Assembly',
         price: 150,
       },
       {
         id: 3,
-        Icon: Package,
+        icon: singleItemIcon,
         title: 'Single Item Move',
         price: 300,
       },
       {
         id: 4,
-        Icon: BedSingle,
+        icon: studioIcon,
         title: 'One-Room Apartment / Studio',
         price: 1000,
       },
       {
         id: 5,
-        Icon: DoorOpen,
+        icon: apartmentIcon,
         title: 'Two-Room Apartment',
         price: 1800,
       },
       {
         id: 6,
-        Icon: House,
+        icon: apartmentIcon,
         title: 'Three-Room Apartment',
         price: 2600,
       },
       {
         id: 7,
-        Icon: Building2,
+        icon: buildingIcon,
         title: 'Four-Room Apartment',
         price: 3400,
       },
       {
         id: 8,
-        Icon: Warehouse,
+        icon: buildingIcon,
         title: 'Five-Room Apartment',
         price: 4200,
       },
@@ -265,7 +261,7 @@ export default function Prices({ language = 'he' }) {
           {content.items.map(
             ({
               id,
-              Icon,
+              icon,
               title,
               oldPrice,
               price,
@@ -285,10 +281,12 @@ export default function Prices({ language = 'he' }) {
                 )}
 
                 <div className="price-card__icon">
-                  <Icon
-                    size={27}
-                    strokeWidth={2}
+                  <img
+                    className="price-card__icon-image"
+                    src={icon}
+                    alt=""
                     aria-hidden="true"
+                    loading="lazy"
                   />
                 </div>
 

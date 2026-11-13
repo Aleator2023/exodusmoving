@@ -115,6 +115,10 @@ function Header({ language, onLanguageChange }) {
     },
   ];
 
+  // Logo sits in the middle: first links on one side, the rest on the other
+  const primaryNavigation = navigation.slice(0, 4);
+  const secondaryNavigation = navigation.slice(4);
+
   const currentLanguage =
     languages.find((item) => item.code === language) ??
     languages[0];
@@ -188,6 +192,21 @@ function Header({ language, onLanguageChange }) {
   return (
     <header className="header">
       <div className="container header__container">
+        <nav
+          className="header__navigation header__navigation--start"
+          aria-label={text.navigationLabel}
+        >
+          {primaryNavigation.map(({ href, label }) => (
+            <a
+              key={href}
+              className="header__link"
+              href={href}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+
         <a
           className="header__logo"
           href="#home"
@@ -201,106 +220,108 @@ function Header({ language, onLanguageChange }) {
           />
         </a>
 
-        <nav
-          className="header__navigation"
-          aria-label={text.navigationLabel}
-        >
-          {navigation.map(({ href, label }) => (
-            <a
-              key={href}
-              className="header__link"
-              href={href}
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-
-        <div
-          className="language-selector language-selector--desktop"
-          ref={languageMenuRef}
-        >
-          <button
-            className="language-selector__button"
-            type="button"
-            aria-label={text.languageLabel}
-            aria-expanded={isLanguageMenuOpen}
-            aria-haspopup="menu"
-            onClick={() =>
-              setIsLanguageMenuOpen(
-                (currentValue) => !currentValue,
-              )
-            }
+        <div className="header__end">
+          <nav
+            className="header__navigation header__navigation--end"
+            aria-label={text.navigationLabel}
           >
-            <img
-              className="language-selector__flag"
-              src={currentLanguage.flag}
-              alt=""
-              aria-hidden="true"
-            />
+            {secondaryNavigation.map(({ href, label }) => (
+              <a
+                key={href}
+                className="header__link"
+                href={href}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
 
-            <span className="language-selector__current-label">
-              {currentLanguage.shortLabel}
-            </span>
-
-            <span
-              className={`language-selector__arrow ${
-                isLanguageMenuOpen
-                  ? 'language-selector__arrow--open'
-                  : ''
-              }`}
-              aria-hidden="true"
+          <div
+            className="language-selector language-selector--desktop"
+            ref={languageMenuRef}
+          >
+            <button
+              className="language-selector__button"
+              type="button"
+              aria-label={text.languageLabel}
+              aria-expanded={isLanguageMenuOpen}
+              aria-haspopup="menu"
+              onClick={() =>
+                setIsLanguageMenuOpen(
+                  (currentValue) => !currentValue,
+                )
+              }
             >
-              ▾
-            </span>
-          </button>
+              <img
+                className="language-selector__flag"
+                src={currentLanguage.flag}
+                alt=""
+                aria-hidden="true"
+              />
 
-          {isLanguageMenuOpen && (
-            <div
-              className="language-selector__menu"
-              role="menu"
-            >
-              {languages.map((item) => (
-                <button
-                  key={item.code}
-                  className={`language-selector__option ${
-                    language === item.code
-                      ? 'language-selector__option--active'
-                      : ''
-                  }`}
-                  type="button"
-                  role="menuitem"
-                  onClick={() =>
-                    handleLanguageSelect(item.code)
-                  }
-                >
-                  <span className="language-selector__option-language">
-                    <img
-                      className="language-selector__flag"
-                      src={item.flag}
-                      alt=""
-                      aria-hidden="true"
-                    />
+              <span className="language-selector__current-label">
+                {currentLanguage.shortLabel}
+              </span>
 
-                    <span>{item.label}</span>
-                  </span>
+              <span
+                className={`language-selector__arrow ${
+                  isLanguageMenuOpen
+                    ? 'language-selector__arrow--open'
+                    : ''
+                }`}
+                aria-hidden="true"
+              >
+                ▾
+              </span>
+            </button>
 
-                  <span className="language-selector__short-label">
-                    {item.shortLabel}
-                  </span>
-                </button>
-              ))}
-            </div>
-          )}
+            {isLanguageMenuOpen && (
+              <div
+                className="language-selector__menu"
+                role="menu"
+              >
+                {languages.map((item) => (
+                  <button
+                    key={item.code}
+                    className={`language-selector__option ${
+                      language === item.code
+                        ? 'language-selector__option--active'
+                        : ''
+                    }`}
+                    type="button"
+                    role="menuitem"
+                    onClick={() =>
+                      handleLanguageSelect(item.code)
+                    }
+                  >
+                    <span className="language-selector__option-language">
+                      <img
+                        className="language-selector__flag"
+                        src={item.flag}
+                        alt=""
+                        aria-hidden="true"
+                      />
+
+                      <span>{item.label}</span>
+                    </span>
+
+                    <span className="language-selector__short-label">
+                      {item.shortLabel}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <a
+            className="header__phone"
+            href="tel:+972507629739"
+            aria-label={text.phoneLabel}
+          >
+            050-762-97-39
+          </a>
         </div>
-
-        <a
-          className="header__phone"
-          href="tel:+972507629739"
-          aria-label={text.phoneLabel}
-        >
-          050-762-97-39
-        </a>
 
         <div
           className="mobile-menu"
@@ -327,6 +348,7 @@ function Header({ language, onLanguageChange }) {
             <div
               className="mobile-menu__panel"
               id="mobile-navigation"
+              dir={language === 'he' ? 'rtl' : 'ltr'}
             >
               <div className="mobile-menu__languages">
                 <p className="mobile-menu__title">

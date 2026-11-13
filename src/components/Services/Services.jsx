@@ -1,10 +1,10 @@
-import flatImage from '../../assets/services/flat.png';
-import officeImage from '../../assets/services/ofice.png';
-import assemblyImage from '../../assets/services/sborka.png';
-import packingImage from '../../assets/services/upakovka.png';
-import countryImage from '../../assets/services/allcountry.png';
-import insuranceImage from '../../assets/services/bituah.png';
-import craneImage from '../../assets/services/kran.png';
+import flatImage from '../../assets/icons/apartment-moving.png';
+import officeImage from '../../assets/icons/office-moving.png';
+import assemblyImage from '../../assets/icons/furniture-assembly.png';
+import packingImage from '../../assets/icons/packing-services.png';
+import countryImage from '../../assets/icons/nationwide-moving.png';
+import insuranceImage from '../../assets/icons/content-insurance.png';
+import craneImage from '../../assets/icons/crane-services.png';
 
 import './Services.css';
 

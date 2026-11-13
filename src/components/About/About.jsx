@@ -1,11 +1,8 @@
-import {
-  Award,
-  ShieldCheck,
-  Clock3,
-  HeartHandshake,
-} from 'lucide-react';
-
-import movingImage from '../../assets/services/10years.png';
+import movingImage from '../../assets/icons/10-years-experience.png';
+import peaceOfMindIcon from '../../assets/icons/peace-of-mind-moving.png';
+import personalServiceIcon from '../../assets/icons/personal-service.png';
+import professionalismIcon from '../../assets/icons/experience-professionalism.png';
+import onTimeIcon from '../../assets/icons/on-time.png';
 
 import './About.css';
 
@@ -20,28 +17,28 @@ const aboutTranslations = {
    advantages: [
   {
     id: 1,
-    Icon: ShieldCheck,
+    icon: peaceOfMindIcon,
     title: 'מעבר בית בראש שקט',
     description:
       'אנחנו שומרים על הרכוש שלכם לאורך כל תהליך ההובלה.',
   },
   {
     id: 2,
-    Icon: HeartHandshake,
+    icon: personalServiceIcon,
     title: 'שירות אישי',
     description:
       'יחס אישי, הקשבה מלאה והתאמת השירות לצרכים שלכם.',
   },
   {
     id: 3,
-    Icon: Award,
+    icon: professionalismIcon,
     title: 'נסיון ומקצועיות',
     description:
       'כל הובלה מתבצעת על ידי צוות מקצועי וקבוע בצורה מסודרת ובטוחה.',
   },
   {
     id: 4,
-    Icon: Clock3,
+    icon: onTimeIcon,
     title: 'עמידה בזמנים',
     description:
       'מגיעים בזמן ומבצעים את העבודה במהירות וללא עיכובים מיותרים.',
@@ -62,28 +59,28 @@ const aboutTranslations = {
     advantages: [
   {
     id: 1,
-    Icon: ShieldCheck,
+    icon: peaceOfMindIcon,
     title: 'Ответственность и безопасность',
     description:
       'Мы бережно относимся к вашему имуществу на всех этапах перевозки',
   },
   {
     id: 2,
-    Icon: HeartHandshake,
+    icon: personalServiceIcon,
     title: 'Индивидуальный подход',
     description:
       'Внимательно выслушиваем клиента и адаптируем услугу под его потребности',
   },
   {
     id: 3,
-    Icon: Award,
+    icon: professionalismIcon,
     title: 'Опыт и профессионализм',
     description:
       'Опытная команда выполняет каждый переезд профессионально, организованно и безопасно',
   },
   {
     id: 4,
-    Icon: Clock3,
+    icon: onTimeIcon,
     title: 'Соблюдение сроков',
     description:
       'Приезжаем вовремя и выполняем работу быстро, без лишних задержек',
@@ -104,28 +101,28 @@ const aboutTranslations = {
 advantages: [
   {
     id: 1,
-    Icon: ShieldCheck,
+    icon: peaceOfMindIcon,
     title: 'Responsibility and safety',
     description:
       'We protect your belongings throughout the entire moving process',
   },
   {
     id: 2,
-    Icon: HeartHandshake,
+    icon: personalServiceIcon,
     title: 'Personal service',
     description:
       'We listen carefully and adapt our services to your individual needs',
   },
   {
     id: 3,
-    Icon: Award,
+    icon: professionalismIcon,
     title: 'Experience and professionalism',
     description:
       'Our experienced team completes every move professionally, efficiently and safely',
   },
   {
     id: 4,
-    Icon: Clock3,
+    icon: onTimeIcon,
     title: 'On-time service',
     description:
       'We arrive on time and complete the work quickly without unnecessary delays',
@@ -179,7 +176,7 @@ export default function About({ language = 'he' }) {
             {content.advantages.map(
               ({
                 id,
-                Icon,
+                icon,
                 title,
                 description,
               }) => (
@@ -188,10 +185,12 @@ export default function About({ language = 'he' }) {
                   key={id}
                 >
                   <div className="about-advantage__icon">
-                    <Icon
-                      size={27}
-                      strokeWidth={2.2}
+                    <img
+                      className="about-advantage__icon-image"
+                      src={icon}
+                      alt=""
                       aria-hidden="true"
+                      loading="lazy"
                     />
                   </div>
 

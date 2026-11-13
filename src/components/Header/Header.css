@@ -9,38 +9,67 @@
 }
 
 .header .header__container {
-  display: flex;
+  display: grid;
   width: min(1280px, calc(100% - 40px));
   min-height: 86px;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas: 'start logo end';
   align-items: center;
-  gap: clamp(14px, 2vw, 24px);
+  gap: clamp(14px, 2vw, 28px);
   margin: 0 auto;
   padding: 0;
-
 }
+
+/* Логотип по центру, немного свисает на Hero и отбрасывает на него тень */
+
 .header__logo {
   display: flex;
-  width: 92px;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: flex-start;
+  grid-area: logo;
+  align-self: start;
+  justify-content: center;
+  height: 86px;
   margin: 0;
+  padding-top: 8px;
   text-decoration: none;
 }
 
 .header__logo-image {
+  position: relative;
+  z-index: 2;
   display: block;
-  width: 74px;
-  height: 74px;
+  width: 124px;
+  height: 124px;
   object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(16, 42, 67, 0.32));
+  transition: transform 0.25s ease;
+}
+
+.header__logo:hover .header__logo-image {
+  transform: scale(1.04);
 }
 
 .header__navigation {
   display: flex;
-  flex: 1;
   align-items: center;
-  justify-content: center;
   gap: clamp(14px, 2vw, 28px);
+}
+
+.header__navigation--start {
+  grid-area: start;
+  justify-content: space-evenly;
+}
+
+.header__end {
+  display: flex;
+  grid-area: end;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 1.6vw, 22px);
+}
+
+.header__navigation--end {
+  flex: 1;
+  justify-content: space-evenly;
 }
 
 .header__link {
@@ -237,94 +266,78 @@
   display: none;
 }
 
-/* Планшеты */
+/* Планшеты: меню уходит в бургер, логотип остаётся по центру */
 
 @media (max-width: 1050px) {
-  .header__container {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 20px;
-    padding: 10px 0;
-  }
-
-  .header__logo {
-    margin-inline-end: 0;
+  .header .header__container {
+    position: relative;
+    min-height: 72px;
+    grid-template-areas: 'menu logo end';
+    direction: ltr;
   }
 
   .header__navigation {
-    order: 4;
-    width: 100%;
-    gap: 22px;
+    display: none;
   }
 
-  .header__link {
-    padding: 8px 0;
+  .header__logo {
+    height: 72px;
+    padding-top: 6px;
   }
 
-  .header__link::after {
-    bottom: 0;
+  .header__logo-image {
+    width: 84px;
+    height: 84px;
+  }
+
+  .header__end {
+    justify-content: flex-end;
+  }
+
+  .mobile-menu {
+    display: block;
+    grid-area: menu;
+    justify-self: start;
   }
 }
 
 /* Мобильная версия */
 
 @media (max-width: 650px) {
-  .header__container {
-    position: relative;
+  .header .header__container {
     width: calc(100% - 20px);
     min-height: 64px;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 5px 0;
-    direction: ltr;
+    gap: 8px;
   }
 
-  /* Обычное меню и настольный выбор языка скрываем */
+  /* Настольный выбор языка скрываем — он есть в бургер-меню */
 
-  .header__navigation,
   .language-selector--desktop {
     display: none;
   }
 
-  /* Бургер слева */
-
-  .mobile-menu {
-    display: block;
-    order: 1;
-    flex-shrink: 0;
-  }
-
-  /* Телефон по центру */
-
-.header__phone {
-  display: flex;
-  width: 190px;
-  min-height: 48px;
-  order: 2;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 0 14px;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1;
-  text-align: center;
-}
-
-  /* Логотип справа */
-
   .header__logo {
-    order: 3;
-    flex-shrink: 0;
-    margin: 0;
+    height: 64px;
+    padding-top: 5px;
   }
 
   .header__logo-image {
-    width: 50px;
-    height: 50px;
+    width: 68px;
+    height: 68px;
   }
 
+  .header__phone {
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+}
+
+/* Бургер и его меню — на планшете и телефоне */
+
+@media (max-width: 1050px) {
   /* Кнопка бургера */
 
   .mobile-menu__button {
@@ -491,19 +504,19 @@
 /* Очень узкие экраны */
 
 @media (max-width: 380px) {
-  .header__container {
+  .header .header__container {
     width: calc(100% - 14px);
     gap: 6px;
   }
 
   .header__phone {
-    padding: 9px 9px;
-    font-size: 16px;
+    padding: 0 8px;
+    font-size: 14px;
   }
 
   .header__logo-image {
-    width: 46px;
-    height: 46px;
+    width: 60px;
+    height: 60px;
   }
 
   .mobile-menu__button {
