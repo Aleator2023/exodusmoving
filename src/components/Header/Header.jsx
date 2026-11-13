@@ -236,6 +236,14 @@ function Header({ language, onLanguageChange }) {
             ))}
           </nav>
 
+          <a
+            className="header__phone"
+            href="tel:+972507629739"
+            aria-label={text.phoneLabel}
+          >
+            050-762-97-39
+          </a>
+
           <div
             className="language-selector language-selector--desktop"
             ref={languageMenuRef}
@@ -314,13 +322,6 @@ function Header({ language, onLanguageChange }) {
             )}
           </div>
 
-          <a
-            className="header__phone"
-            href="tel:+972507629739"
-            aria-label={text.phoneLabel}
-          >
-            050-762-97-39
-          </a>
         </div>
 
         <div
