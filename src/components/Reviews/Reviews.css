@@ -327,6 +327,12 @@
   box-shadow: var(--shadow-card);
 }
 
+@media (max-width: 1024px) {
+  .reviews__track {
+    transition-duration: 0.8s;
+  }
+}
+
 @media (max-width: 900px) {
   .reviews__heading {
     display: grid;

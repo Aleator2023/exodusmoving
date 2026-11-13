@@ -1,4 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from 'react';
 import {
   ChevronLeft,
   ChevronRight,
@@ -66,6 +72,30 @@ const defaultGoogleData = {
 const reviewsApiUrl =
   import.meta.env.VITE_GOOGLE_REVIEWS_API_URL ||
   '/api/google-reviews';
+
+// Autoplay only on mobile and tablet; on desktop reviews change by arrows only.
+const AUTOPLAY_MEDIA_QUERY = '(max-width: 1024px)';
+const AUTOPLAY_INTERVAL_MS = 8000;
+
+function useMediaQuery(query) {
+  const subscribe = useCallback(
+    (onChange) => {
+      const mediaQueryList = window.matchMedia(query);
+      mediaQueryList.addEventListener('change', onChange);
+
+      return () => {
+        mediaQueryList.removeEventListener('change', onChange);
+      };
+    },
+    [query],
+  );
+
+  return useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
+}
 
 export default function Reviews({ language = 'he' }) {
   const content =
@@ -142,8 +172,10 @@ export default function Reviews({ language = 'he' }) {
     return Number(googleData.rating).toFixed(1);
   }, [googleData.rating]);
 
+  const isAutoplayEnabled = useMediaQuery(AUTOPLAY_MEDIA_QUERY);
+
   useEffect(() => {
-    if (reviewsCount <= 1) {
+    if (!isAutoplayEnabled || reviewsCount <= 1) {
       return undefined;
     }
 
@@ -153,12 +185,12 @@ export default function Reviews({ language = 'he' }) {
           ? 0
           : currentIndex + 1,
       );
-    }, 5000);
+    }, AUTOPLAY_INTERVAL_MS);
 
     return () => {
       window.clearInterval(intervalId);
     };
-  }, [reviewsCount]);
+  }, [isAutoplayEnabled, reviewsCount, activeIndex]);
 
   const goToPreviousReview = () => {
     if (reviewsCount <= 1) {

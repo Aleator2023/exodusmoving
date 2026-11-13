@@ -37,11 +37,11 @@ function App() {
       <main>
         <HeroIntro language={language} />
         <HeroSlider language={language} />
+        <Reviews language={language} />
         <Services language={language} />
         <About language={language} />
         <Prices language={language} />
         <ServiceAreas language={language} />
-        <Reviews language={language} />
       </main>
 
   
