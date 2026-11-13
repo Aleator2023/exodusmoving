@@ -1,0 +1,135 @@
+/* Отдельная страница услуги: логотип, иконка, название, краткое описание */
+
+.service-page {
+  padding: 56px 0 var(--section-padding);
+  background-color: var(--color-background-alt);
+}
+
+.service-page__card {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+  padding: clamp(28px, 5vw, 56px);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-card);
+}
+
+.service-page__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-large);
+}
+
+.service-page__icon {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 16px rgba(22, 24, 29, 0.16));
+}
+
+.service-page__label {
+  margin: 0 0 10px;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.service-page__title {
+  margin: 0 0 18px;
+  color: var(--color-dark);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.service-page__description {
+  margin: 0 0 28px;
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.service-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.service-page__button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  color: var(--color-white);
+  font-weight: 800;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-small);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-page__button:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.service-page__button--outline {
+  color: var(--color-dark);
+  background-color: transparent;
+  border-color: var(--color-dark);
+}
+
+.service-page__button--outline:hover {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.service-page__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+.service-page__links a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .service-page {
+    padding-top: 36px;
+  }
+
+  .service-page__card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .service-page__visual {
+    width: min(300px, 100%);
+    margin: 0 auto;
+  }
+
+  .service-page__actions,
+  .service-page__links {
+    justify-content: center;
+  }
+
+  .service-page__button {
+    width: 100%;
+  }
+}

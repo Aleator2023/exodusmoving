@@ -51,7 +51,7 @@
 .hero-slider__overlay {
   position: absolute;
   inset: 0;
-  /* Затемнение справа — там, где стоит текст слайда */
+  /* Затемнение справа, там, где стоит текст слайда */
   background: linear-gradient(
     270deg,
     rgba(22, 24, 29, 0.82) 0%,

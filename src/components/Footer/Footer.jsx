@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 
+import { languagePrefix } from '../../data/seo';
 import {
   LEGAL_HASHES,
   legalUi,
@@ -62,6 +63,8 @@ function Footer({ language = 'he' }) {
 
   const legalText = legalUi[language] ?? legalUi.he;
 
+  const sectionBase = `${languagePrefix(language)}/`;
+
   return (
     <footer
       className="footer"
@@ -73,7 +76,7 @@ function Footer({ language = 'he' }) {
           <div className="footer__about">
             <Link
               className="footer__logo"
-              to="/"
+              to={sectionBase}
               aria-label="Exodus Moving"
             >
               Exodus Moving
@@ -92,19 +95,19 @@ function Footer({ language = 'he' }) {
               {content.navigationTitle}
             </h2>
 
-            <a href="#home">
+            <a href={`${sectionBase}#home`}>
               {content.navigation.home}
             </a>
 
-            <a href="#services">
+            <a href={`${sectionBase}#services`}>
               {content.navigation.services}
             </a>
 
-            <a href="#about">
+            <a href={`${sectionBase}#about`}>
               {content.navigation.about}
             </a>
 
-            <a href="#prices">
+            <a href={`${sectionBase}#prices`}>
               {content.navigation.prices}
             </a>
           </nav>

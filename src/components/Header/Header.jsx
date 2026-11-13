@@ -6,6 +6,8 @@ import englishFlag from '../../assets/en.png';
 
 import logo from '../../assets/exodus-moving-logo-transparent.png';
 
+import { languagePrefix } from '../../data/seo';
+
 import './Header.css';
 
 const translations = {
@@ -88,29 +90,32 @@ function Header({ language, onLanguageChange }) {
 
   const text = translations[language] ?? translations.he;
 
+  // Section links point to the home page of the current language: /#…, /ru/#…
+  const sectionBase = `${languagePrefix(language)}/`;
+
   const navigation = [
     {
-      href: '#home',
+      href: `${sectionBase}#home`,
       label: text.home,
     },
     {
-      href: '#services',
+      href: `${sectionBase}#services`,
       label: text.services,
     },
     {
-      href: '#about',
+      href: `${sectionBase}#about`,
       label: text.about,
     },
     {
-      href: '#prices',
+      href: `${sectionBase}#prices`,
       label: text.prices,
     },
     {
-      href: '#service-areas',
+      href: `${sectionBase}#service-areas`,
       label: text.serviceAreas,
     },
     {
-      href: '#contacts',
+      href: `${sectionBase}#contacts`,
       label: text.contacts,
     },
   ];
@@ -209,7 +214,7 @@ function Header({ language, onLanguageChange }) {
 
         <a
           className="header__logo"
-          href="#home"
+          href={`${sectionBase}#home`}
           aria-label={text.logoLabel}
           onClick={handleNavigationClick}
         >

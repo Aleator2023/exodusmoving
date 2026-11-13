@@ -1,8 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://exodusmoving.co.il/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/apartment-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/apartment-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/apartment-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/apartment-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/apartment-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/apartment-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/apartment-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/office-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/office-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/office-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/office-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/office-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/office-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/office-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/furniture-assembly/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/furniture-assembly/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/furniture-assembly/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/furniture-assembly/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/furniture-assembly/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/furniture-assembly/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/furniture-assembly/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/nationwide-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/nationwide-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/nationwide-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/nationwide-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/nationwide-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/nationwide-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/nationwide-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/content-insurance/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/content-insurance/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/content-insurance/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/content-insurance/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/content-insurance/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/content-insurance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/content-insurance/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/crane-services/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/crane-services/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/crane-services/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/crane-services/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/crane-services/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/crane-services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/crane-services/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/piano-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/piano-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/piano-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/piano-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/piano-moving/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/piano-moving/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/piano-moving/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/services/truck-rental-with-driver/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/truck-rental-with-driver/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/ru/services/truck-rental-with-driver/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/truck-rental-with-driver/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://exodusmoving.co.il/en/services/truck-rental-with-driver/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://exodusmoving.co.il/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://exodusmoving.co.il/ru/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exodusmoving.co.il/en/services/truck-rental-with-driver/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://exodusmoving.co.il/services/truck-rental-with-driver/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -8,6 +8,14 @@ import craneImage from '../../assets/icons/crane-services.png';
 import pianoImage from '../../assets/icons/piano-moving.png';
 import truckRentalImage from '../../assets/icons/truck-rental-with-driver.png';
 
+import { Link } from 'react-router';
+
+import {
+  findServicePageById,
+  servicePath,
+} from '../../data/servicePages';
+import { localizePath } from '../../data/seo';
+
 import './Services.css';
 
 const servicesTranslations = {
@@ -18,7 +26,7 @@ const servicesTranslations = {
     featuredService: {
       title: 'שירותי אריזת הבית בארגזים',
       description:
-        'אנחנו נארוז את כל תכולת הבית שלכם בארגזים בצורה המקצועית והבטוחה ביותר, כך ששום דבר לא יישבר. אריזה עצמית לוקחת ימים ארוכים ומלווה בסטרס, בעוד שהצוות המקצועי שלנו חוסך לכם זמן יקר ומביא איתו את שיטות העבודה וחומרי המיגון הנכונים ביותר לשמירה על החפצים שלכם. השירות מבוצע על ידי צוות מיומן, אמין ומסור שאפשר לסמוך עליו בעיניים עצומות. אתם יכולים להירגע – אנחנו נדאג להכל!',
+        'אנחנו נארוז את כל תכולת הבית שלכם בארגזים בצורה המקצועית והבטוחה ביותר, כך ששום דבר לא יישבר. אריזה עצמית לוקחת ימים ארוכים ומלווה בסטרס, בעוד שהצוות המקצועי שלנו חוסך לכם זמן יקר ומביא איתו את שיטות העבודה וחומרי המיגון הנכונים ביותר לשמירה על החפצים שלכם. השירות מבוצע על ידי צוות מיומן, אמין ומסור שאפשר לסמוך עליו בעיניים עצומות. אתם יכולים להירגע, אנחנו נדאג להכל!',
       image: packingImage,
       alt: 'שירותי אריזת תכולת הבית בארגזים',
     },
@@ -83,7 +91,7 @@ const servicesTranslations = {
     featuredService: {
       title: 'Упаковка домашних вещей в коробки',
       description:
-        'Мы профессионально и безопасно упакуем всё содержимое вашего дома в коробки, чтобы ни одна вещь не повредилась. Самостоятельная упаковка может занять несколько долгих дней и сопровождаться сильным стрессом. Наша профессиональная команда сэкономит ваше время и использует подходящие методы работы и защитные материалы для сохранности имущества. Услуга выполняется опытными, надёжными и ответственными специалистами, которым можно полностью доверять. Вы можете спокойно заниматься своими делами — обо всём остальном позаботимся мы!',
+        'Мы профессионально и безопасно упакуем всё содержимое вашего дома в коробки, чтобы ни одна вещь не повредилась. Самостоятельная упаковка может занять несколько долгих дней и сопровождаться сильным стрессом. Наша профессиональная команда сэкономит ваше время и использует подходящие методы работы и защитные материалы для сохранности имущества. Услуга выполняется опытными, надёжными и ответственными специалистами, которым можно полностью доверять. Вы можете спокойно заниматься своими делами, а обо всём остальном позаботимся мы!',
       image: packingImage,
       alt: 'Профессиональная упаковка домашних вещей в коробки',
     },
@@ -148,7 +156,7 @@ const servicesTranslations = {
     featuredService: {
       title: 'Professional Home Packing Services',
       description:
-        'We will professionally and safely pack the entire contents of your home into boxes, making sure that nothing gets damaged. Packing everything yourself can take several long days and cause a great deal of stress. Our professional team saves you valuable time and uses the correct working methods and protective materials to keep your belongings safe. The service is carried out by skilled, reliable and dedicated professionals you can fully trust. You can relax — we will take care of everything!',
+        'We will professionally and safely pack the entire contents of your home into boxes, making sure that nothing gets damaged. Packing everything yourself can take several long days and cause a great deal of stress. Our professional team saves you valuable time and uses the correct working methods and protective materials to keep your belongings safe. The service is carried out by skilled, reliable and dedicated professionals you can fully trust. You can relax, we will take care of everything!',
       image: packingImage,
       alt: 'Professional home packing services',
     },
@@ -276,23 +284,31 @@ export default function Services({ language = 'he' }) {
 
         <div className="services__grid">
           {sortByDisplayOrder(content.services).map(
-            ({ id, title, image, alt }) => (
+            ({ id, title, image }) => (
               <article
                 className="service-card"
                 key={id}
               >
-                <div className="service-card__icon-wrapper">
-                  <img
-                    className="service-card__image"
-                    src={image}
-                    alt={alt}
-                    loading="lazy"
-                  />
-                </div>
+                <Link
+                  className="service-card__link"
+                  to={localizePath(
+                    language,
+                    servicePath(findServicePageById(id).slug),
+                  )}
+                >
+                  <div className="service-card__icon-wrapper">
+                    <img
+                      className="service-card__image"
+                      src={image}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
 
-                <h3 className="service-card__title">
-                  {title}
-                </h3>
+                  <h3 className="service-card__title">
+                    {title}
+                  </h3>
+                </Link>
               </article>
             ),
           )}

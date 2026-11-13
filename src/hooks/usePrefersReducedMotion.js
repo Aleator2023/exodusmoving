@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react';
 
-// true when the visitor asked the OS/browser to reduce motion —
+// true when the visitor asked the OS/browser to reduce motion;
 // automatic slide changes are then switched off (accessibility).
 const QUERY = '(prefers-reduced-motion: reduce)';
 

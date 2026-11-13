@@ -29,7 +29,7 @@ const leadPopupTranslations = {
   ru: {
     title: 'Планируете переезд?',
     intro:
-      'Оставьте имя, телефон и дату перевозки — мы получим заявку в WhatsApp.',
+      'Оставьте имя, телефон и дату перевозки, и мы получим заявку в WhatsApp.',
     namePlaceholder: 'Ваше имя',
     phonePlaceholder: 'Телефон',
     dateLabel: 'Дата перевозки',
@@ -49,7 +49,7 @@ const leadPopupTranslations = {
   en: {
     title: 'Planning a move?',
     intro:
-      'Leave your name, phone number and moving date — we will receive your request on WhatsApp.',
+      'Leave your name, phone number and moving date, and we will receive your request on WhatsApp.',
     namePlaceholder: 'Full name',
     phonePlaceholder: 'Phone number',
     dateLabel: 'Moving date',

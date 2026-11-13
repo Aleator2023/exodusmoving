@@ -127,13 +127,13 @@ export const legalDocuments = {
         {
           heading: 'Известные ограничения',
           paragraphs: [
-            'Отзывы загружаются из Google в том виде, в каком их написали клиенты. Отдельные части сайта могут быть ещё не полностью адаптированы — мы продолжаем проверять и улучшать доступность.',
+            'Отзывы загружаются из Google в том виде, в каком их написали клиенты. Отдельные части сайта могут быть ещё не полностью адаптированы. Мы продолжаем проверять и улучшать доступность.',
           ],
         },
         {
           heading: 'Обращения по вопросам доступности',
           paragraphs: [
-            'Столкнулись с проблемой доступности? Сообщите нам, на какой странице, в каком браузере и на каком устройстве она возникла, — мы постараемся решить её как можно скорее.',
+            'Столкнулись с проблемой доступности? Сообщите нам, на какой странице, в каком браузере и на каком устройстве она возникла, и мы постараемся решить её как можно скорее.',
             'Ответственный за доступность: команда Exodus Moving.',
           ],
           contact: true,
@@ -173,7 +173,7 @@ export const legalDocuments = {
         {
           heading: 'Known limitations',
           paragraphs: [
-            'Reviews are shown from Google as written by customers. Some parts of the website may not yet be fully accessible — we keep testing and improving accessibility.',
+            'Reviews are shown from Google as written by customers. Some parts of the website may not yet be fully accessible. We keep testing and improving accessibility.',
           ],
         },
         {
@@ -231,7 +231,7 @@ export const legalDocuments = {
         {
           heading: 'מסירת מידע לצדדים שלישיים',
           paragraphs: [
-            'איננו מוכרים את המידע שלכם. המידע עשוי לעבור לספקי שירות המסייעים לנו בהפעלת האתר והעסק — Google (מדידה וביקורות), Meta (WhatsApp) וספק האחסון — וזאת רק במידה הנדרשת. ייתכן שחלק מספקים אלה שומרים מידע מחוץ לישראל. מידע יימסר לרשויות רק אם הדבר נדרש על פי דין.',
+            'איננו מוכרים את המידע שלכם. המידע עשוי לעבור לספקי שירות המסייעים לנו בהפעלת האתר והעסק: Google (מדידה וביקורות), Meta (WhatsApp) וספק האחסון, וזאת רק במידה הנדרשת. ייתכן שחלק מספקים אלה שומרים מידע מחוץ לישראל. מידע יימסר לרשויות רק אם הדבר נדרש על פי דין.',
           ],
         },
         {
@@ -297,7 +297,7 @@ export const legalDocuments = {
         {
           heading: 'Передача данных третьим лицам',
           paragraphs: [
-            'Мы не продаём ваши данные. Они могут передаваться поставщикам услуг, которые помогают нам работать, — Google (статистика и отзывы), Meta (WhatsApp) и хостинг-провайдеру — только в необходимом объёме. Некоторые из них могут хранить данные за пределами Израиля. Государственным органам данные передаются только по требованию закона.',
+            'Мы не продаём ваши данные. Они могут передаваться поставщикам услуг, которые помогают нам работать: Google (статистика и отзывы), Meta (WhatsApp) и хостинг-провайдеру, и только в необходимом объёме. Некоторые из них могут хранить данные за пределами Израиля. Государственным органам данные передаются только по требованию закона.',
           ],
         },
         {
@@ -363,7 +363,7 @@ export const legalDocuments = {
         {
           heading: 'Sharing with third parties',
           paragraphs: [
-            'We do not sell your information. It may be shared, only as needed, with service providers that help us run the website and business — Google (analytics and reviews), Meta (WhatsApp) and our hosting provider. Some of them may store data outside Israel. Information is disclosed to authorities only when required by law.',
+            'We do not sell your information. It may be shared, only as needed, with service providers that help us run the website and business: Google (analytics and reviews), Meta (WhatsApp) and our hosting provider. Some of them may store data outside Israel. Information is disclosed to authorities only when required by law.',
           ],
         },
         {
