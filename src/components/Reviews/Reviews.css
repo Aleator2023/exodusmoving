@@ -4,7 +4,7 @@
   background:
     radial-gradient(
       circle at top right,
-      rgba(245, 130, 32, 0.12),
+      rgba(255, 107, 26, 0.12),
       transparent 32%
     ),
     var(--color-background-alt);
@@ -157,7 +157,7 @@
 .reviews__link:hover {
   transform: translateY(-2px);
   background-color: var(--color-primary-hover);
-  box-shadow: 0 12px 26px rgba(245, 130, 32, 0.24);
+  box-shadow: 0 12px 26px rgba(255, 107, 26, 0.24);
 }
 
 .reviews__viewport {
@@ -192,7 +192,7 @@
   position: absolute;
   top: 28px;
   inset-inline-end: 28px;
-  color: rgba(245, 130, 32, 0.2);
+  color: rgba(255, 107, 26, 0.2);
 }
 
 .review-card__stars {
@@ -231,7 +231,7 @@
   background: linear-gradient(
     135deg,
     var(--color-primary),
-    #ffb15f
+    #ffa266
   );
   color: var(--color-white);
   font-size: 22px;
@@ -301,7 +301,7 @@
   padding: 0;
   border: 0;
   border-radius: 999px;
-  background-color: #cbd5e1;
+  background-color: #d6d2cc;
   cursor: pointer;
   transition:
     width 0.2s ease,

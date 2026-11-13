@@ -1,17 +1,17 @@
 :root {
-  --color-primary: #f58220;
-  --color-primary-hover: #d9680f;
+  --color-primary: #ff6b1a;
+  --color-primary-hover: #e85a0c;
 
-  --color-dark: #102a43;
-  --color-dark-soft: #243b53;
+  --color-dark: #16181d;
+  --color-dark-soft: #2a2d34;
 
-  --color-text: #1f2933;
-  --color-text-muted: #626d78;
+  --color-text: #1c1d21;
+  --color-text-muted: #6b6e74;
 
   --color-white: #ffffff;
   --color-background: #ffffff;
-  --color-background-alt: #f7f8fa;
-  --color-border: #e4e7eb;
+  --color-background-alt: #f6f5f2;
+  --color-border: #e8e5e0;
 
   --container-width: 1200px;
   --container-padding: 20px;
@@ -22,8 +22,8 @@
   --border-radius-medium: 18px;
   --border-radius-large: 30px;
 
-  --shadow-card: 0 10px 30px rgba(16, 42, 67, 0.08);
-  --shadow-card-hover: 0 16px 38px rgba(16, 42, 67, 0.14);
+  --shadow-card: 0 10px 30px rgba(22, 24, 29, 0.08);
+  --shadow-card-hover: 0 16px 38px rgba(22, 24, 29, 0.14);
 
   color: var(--color-dark);
   background-color: var(--color-background);

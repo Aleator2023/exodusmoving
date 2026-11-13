@@ -36,7 +36,7 @@
   margin-bottom: 34px;
   padding: 34px 42px;
   background-color: var(--color-white);
-  border: 1px solid rgba(245, 130, 32, 0.3);
+  border: 1px solid rgba(255, 107, 26, 0.3);
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow-card);
   overflow: hidden;
@@ -48,7 +48,7 @@
 
 .featured-service:hover {
   transform: translateY(-5px);
-  border-color: rgba(245, 130, 32, 0.55);
+  border-color: rgba(255, 107, 26, 0.55);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -78,7 +78,7 @@
 
 .featured-service:hover .featured-service__image {
   filter: drop-shadow(
-    0 12px 14px rgba(245, 130, 32, 0.22)
+    0 12px 14px rgba(255, 107, 26, 0.22)
   );
 }
 
@@ -136,7 +136,7 @@
 
 .service-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(245, 130, 32, 0.35);
+  border-color: rgba(255, 107, 26, 0.35);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -167,7 +167,7 @@
 
 .service-card:hover .service-card__image {
   filter: drop-shadow(
-    0 10px 12px rgba(245, 130, 32, 0.22)
+    0 10px 12px rgba(255, 107, 26, 0.22)
   );
 }
 
