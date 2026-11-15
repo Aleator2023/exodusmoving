@@ -7,6 +7,7 @@ import {
 } from '../LegalDialog/legalContent';
 
 import './Footer.css';
+import { whatsappLink } from '../../data/whatsapp';
 
 const footerTranslations = {
   he: {
@@ -135,7 +136,7 @@ function Footer({ language = 'he' }) {
 
             <a
               className="footer__contact-whatsapp"
-              href="https://wa.me/972507629739"
+              href={whatsappLink(language)}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -8,6 +8,7 @@ import pianoIcon from '../../assets/icons/piano-moving.png';
 import truckRentalIcon from '../../assets/icons/truck-rental-with-driver.png';
 
 import './Prices.css';
+import { whatsappLink } from '../../data/whatsapp';
 
 const pricesTranslations = {
   he: {
@@ -256,15 +257,6 @@ const pricesTranslations = {
   },
 };
 
-const whatsappPhoneNumber = '972507629739';
-
-const whatsappMessage =
-  'שלום, אני מעוניין לקבל הצעת מחיר מדויקת להובלה.';
-
-const whatsappLink =
-  `https://wa.me/${whatsappPhoneNumber}` +
-  `?text=${encodeURIComponent(whatsappMessage)}`;
-
 export default function Prices({ language = 'he' }) {
   const content =
     pricesTranslations[language] ?? pricesTranslations.he;
@@ -388,7 +380,7 @@ export default function Prices({ language = 'he' }) {
 
           <a
             className="prices__button"
-            href={whatsappLink}
+            href={whatsappLink(language)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={content.buttonLabel}

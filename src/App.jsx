@@ -218,7 +218,7 @@ function App() {
 
       <Footer language={language} />
       <PhoneButton />
-      <WhatsAppButton />
+      <WhatsAppButton language={language} />
       {isHomePage && <LeadPopup language={language} />}
       <LegalDialog language={language} />
     </div>

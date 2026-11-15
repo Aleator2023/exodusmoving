@@ -1,13 +1,8 @@
 import './WhatsAppButton.css';
+import { whatsappLink } from '../../data/whatsapp';
 
-function WhatsAppButton() {
-  const phoneNumber = '972507629739';
-
-  const message = encodeURIComponent(
-    'שלום! אשמח לקבל הצעת מחיר להובלה.',
-  );
-
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+function WhatsAppButton({ language = 'he' }) {
+  const whatsappUrl = whatsappLink(language);
 
   return (
     <a

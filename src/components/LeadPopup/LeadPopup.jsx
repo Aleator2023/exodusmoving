@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 import { LEGAL_HASHES } from '../LegalDialog/legalContent';
 
 import './LeadPopup.css';
+import { whatsappGreeting, whatsappLink } from '../../data/whatsapp';
 
 const leadPopupTranslations = {
   he: {
@@ -18,7 +19,6 @@ const leadPopupTranslations = {
     nameError: 'יש להזין שם',
     phoneError: 'יש להזין מספר טלפון',
     dateError: 'יש לבחור תאריך הובלה',
-    messageTitle: 'בקשה להצעת מחיר להובלה',
     nameText: 'שם',
     phoneText: 'טלפון',
     dateText: 'תאריך הובלה',
@@ -38,7 +38,6 @@ const leadPopupTranslations = {
     nameError: 'Введите имя',
     phoneError: 'Введите телефон',
     dateError: 'Выберите дату перевозки',
-    messageTitle: 'Заявка на перевозку',
     nameText: 'Имя',
     phoneText: 'Телефон',
     dateText: 'Дата перевозки',
@@ -58,7 +57,6 @@ const leadPopupTranslations = {
     nameError: 'Please enter your name',
     phoneError: 'Please enter your phone number',
     dateError: 'Please choose a moving date',
-    messageTitle: 'Moving quote request',
     nameText: 'Name',
     phoneText: 'Phone',
     dateText: 'Moving date',
@@ -67,7 +65,6 @@ const leadPopupTranslations = {
   },
 };
 
-const whatsappPhoneNumber = '972507629739';
 
 export default function LeadPopup({ language = 'he' }) {
   const content =
@@ -193,15 +190,14 @@ export default function LeadPopup({ language = 'he' }) {
       return;
     }
 
-    const message = `${content.messageTitle}
+    const message = `${whatsappGreeting(language)}
 
 ${content.nameText}: ${formData.name}
 ${content.phoneText}: ${formData.phone}
 ${content.dateText}: ${formData.movingDate}`;
 
     const whatsappUrl =
-      `https://wa.me/${whatsappPhoneNumber}` +
-      `?text=${encodeURIComponent(message)}`;
+      whatsappLink(language, message);
 
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 

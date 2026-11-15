@@ -14,6 +14,7 @@ import { findServicePage } from '../../data/servicePages';
 import { languagePrefix } from '../../data/seo';
 
 import './ServicePage.css';
+import { whatsappLink } from '../../data/whatsapp';
 
 const iconsByServiceId = {
   1: apartmentIcon,
@@ -33,7 +34,6 @@ const pageTranslations = {
     call: 'התקשרו: 050-762-97-39',
     allServices: 'לכל השירותים',
     prices: 'למחירון',
-    whatsappText: 'שלום, אני מעוניין לקבל הצעת מחיר עבור: ',
   },
   ru: {
     label: 'Услуги Exodus Moving',
@@ -41,7 +41,6 @@ const pageTranslations = {
     call: 'Позвонить: 050-762-97-39',
     allServices: 'Все услуги',
     prices: 'Цены',
-    whatsappText: 'Здравствуйте, хочу получить предложение на услугу: ',
   },
   en: {
     label: 'Exodus Moving services',
@@ -49,7 +48,6 @@ const pageTranslations = {
     call: 'Call: 050-762-97-39',
     allServices: 'All services',
     prices: 'Prices',
-    whatsappText: 'Hello, I would like a quote for: ',
   },
 };
 
@@ -71,10 +69,6 @@ export default function ServicePage({ language = 'he' }) {
   if (!page) {
     return <Navigate to={homeBase} replace />;
   }
-
-  const whatsappLink =
-    'https://wa.me/972507629739?text=' +
-    encodeURIComponent(ui.whatsappText + content.title);
 
   return (
     <section
@@ -109,7 +103,7 @@ export default function ServicePage({ language = 'he' }) {
             <div className="service-page__actions">
               <a
                 className="service-page__button"
-                href={whatsappLink}
+                href={whatsappLink(language)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
