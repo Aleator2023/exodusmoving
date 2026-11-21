@@ -1,4 +1,20 @@
+import { Link } from 'react-router';
+
+import { cityPages, cityPath } from '../../data/cityPages';
+import { localizePath } from '../../data/seo';
+
 import './ServiceAreas.css';
+
+// City name -> address of its page, for cities that have a page in this language
+const cityPageLinks = (language) =>
+  Object.fromEntries(
+    cityPages
+      .filter((page) => page.languages.includes(language))
+      .map((page) => [
+        page[language].name,
+        localizePath(language, cityPath(page.slug)),
+      ]),
+  );
 
 const serviceAreasTranslations = {
   he: {
@@ -86,6 +102,7 @@ export default function ServiceAreas({ language = 'he' }) {
     serviceAreasTranslations.he;
 
   const direction = language === 'he' ? 'rtl' : 'ltr';
+  const cityLinks = cityPageLinks(language);
 
   return (
     <section
@@ -103,14 +120,24 @@ export default function ServiceAreas({ language = 'he' }) {
         </h2>
 
         <div className="service-areas__grid">
-          {content.areas.map((area) => (
-            <span
-              className="service-area-pill"
-              key={area}
-            >
-              {area}
-            </span>
-          ))}
+          {content.areas.map((area) =>
+            cityLinks[area] ? (
+              <Link
+                className="service-area-pill service-area-pill--link"
+                key={area}
+                to={cityLinks[area]}
+              >
+                {area}
+              </Link>
+            ) : (
+              <span
+                className="service-area-pill"
+                key={area}
+              >
+                {area}
+              </span>
+            ),
+          )}
         </div>
       </div>
     </section>

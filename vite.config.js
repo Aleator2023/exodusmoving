@@ -67,6 +67,9 @@ function multilingualPages() {
           if (language === DEFAULT_LANGUAGE && page.path === '/') {
             continue // dist/index.html is the Hebrew home page already
           }
+          if (!page.languages.includes(language)) {
+            continue // e.g. city pages that exist in Hebrew only
+          }
 
           const { title, description } = page.meta(language)
           const safeTitle = escapeHtml(title)

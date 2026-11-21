@@ -21,6 +21,7 @@ import Reviews from './components/Reviews/Reviews';
 import ServiceAreas from './components/ServiceAreas/ServiceAreas';
 import LegalDialog from './components/LegalDialog/LegalDialog';
 import ServicePage from './components/ServicePage/ServicePage';
+import CityPage from './components/CityPage/CityPage';
 
 import {
   DEFAULT_LANGUAGE,
@@ -32,6 +33,7 @@ import {
   languagePrefix,
   localizePath,
   ogLocale,
+  pageLanguages,
   pageUrl,
   siteName,
   stripLanguagePrefix,
@@ -171,10 +173,14 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Switching language opens the same page in the other language
+  // Switching language opens the same page in the other language,
+  // or that language's home page if this page does not exist in it
   const handleLanguageChange = (nextLanguage) => {
     storeLanguage(nextLanguage);
-    navigate(localizePath(nextLanguage, pagePath));
+    const targetPath = pageLanguages(pagePath).includes(nextLanguage)
+      ? pagePath
+      : '/';
+    navigate(localizePath(nextLanguage, targetPath));
   };
 
   const homePath = localizePath(language, '/');
@@ -205,6 +211,11 @@ function App() {
                 key={`${routeLanguage}-service`}
                 path={`${prefix}/services/:slug`}
                 element={<ServicePage language={routeLanguage} />}
+              />,
+              <Route
+                key={`${routeLanguage}-city`}
+                path={`${prefix}/cities/:slug`}
+                element={<CityPage language={routeLanguage} />}
               />,
             ];
           })}

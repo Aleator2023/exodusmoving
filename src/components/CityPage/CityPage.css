@@ -1,0 +1,166 @@
+/* Страница города: заголовок, текст по разделам, призыв написать в WhatsApp */
+
+.city-page {
+  padding: 56px 0 var(--section-padding);
+  background-color: var(--color-background-alt);
+}
+
+.city-page__container {
+  max-width: 860px;
+}
+
+.city-page__hero,
+.city-page__body,
+.city-page__cta {
+  padding: clamp(24px, 5vw, 48px);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-card);
+}
+
+.city-page__body,
+.city-page__cta {
+  margin-top: 24px;
+}
+
+.city-page__label {
+  margin: 0 0 10px;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.city-page__title {
+  margin: 0 0 18px;
+  color: var(--color-dark);
+  font-size: clamp(32px, 4.5vw, 50px);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.city-page__intro {
+  margin: 0 0 28px;
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.city-page__text {
+  margin: 0 0 30px;
+  color: var(--color-text);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.city-page__text strong {
+  color: var(--color-dark);
+  font-weight: 800;
+}
+
+.city-page__text:last-child {
+  margin-bottom: 0;
+}
+
+.city-page__cta {
+  text-align: center;
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+}
+
+.city-page__cta-title {
+  margin: 0 0 10px;
+  color: var(--color-white);
+  font-size: clamp(24px, 3.2vw, 32px);
+  font-weight: 900;
+}
+
+.city-page__cta-text {
+  margin: 0 auto 24px;
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.city-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.city-page__cta .city-page__actions {
+  justify-content: center;
+}
+
+.city-page__button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  color: var(--color-white);
+  font-weight: 800;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-small);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.city-page__button:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.city-page__button--outline {
+  color: var(--color-dark);
+  background-color: transparent;
+  border-color: var(--color-dark);
+}
+
+.city-page__button--outline:hover {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+}
+
+.city-page__cta .city-page__button--outline {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.city-page__cta .city-page__button--outline:hover {
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+.city-page__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin-top: 24px;
+}
+
+.city-page__links a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 650px) {
+  .city-page {
+    padding-top: 32px;
+  }
+
+  .city-page__container {
+    width: calc(100% - 20px);
+  }
+
+  .city-page__button {
+    width: 100%;
+  }
+}

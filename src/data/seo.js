@@ -3,6 +3,7 @@
 // English under /en/. Plain data only: also read by vite.config.js.
 
 import { SITE_URL, servicePages, servicePath } from './servicePages.js';
+import { cityPages, cityPath } from './cityPages.js';
 
 export { SITE_URL };
 
@@ -58,27 +59,42 @@ export const homeMeta = {
   },
 };
 
-// Every page of the site (without language prefix) with its meta per language.
+// Every page of the site (without language prefix) with its meta per language
+// and the languages it exists in (city pages are not in every language).
 export const sitePages = [
   {
     path: '/',
+    languages: LANGUAGES,
     meta: (language) => homeMeta[language],
   },
   ...servicePages.map((page) => ({
     path: servicePath(page.slug),
+    languages: LANGUAGES,
     meta: (language) => ({
       title: page[language].metaTitle,
       description: page[language].metaDescription ?? page.he.metaDescription,
     }),
   })),
+  ...cityPages.map((page) => ({
+    path: cityPath(page.slug),
+    languages: page.languages,
+    meta: (language) => ({
+      title: (page[language] ?? page.he).metaTitle,
+      description: (page[language] ?? page.he).metaDescription,
+    }),
+  })),
 ];
+
+export const pageLanguages = (path) =>
+  sitePages.find((page) => page.path === path)?.languages ?? LANGUAGES;
 
 export const findSitePage = (path) =>
   sitePages.find((page) => page.path === path) ?? sitePages[0];
 
-// hreflang alternates for one page: he/ru/en + x-default (Hebrew)
+// hreflang alternates for one page: only the languages it exists in,
+// + x-default (Hebrew)
 export const hreflangLinks = (path) => [
-  ...LANGUAGES.map((language) => ({
+  ...pageLanguages(path).map((language) => ({
     hreflang: language,
     href: pageUrl(language, path),
   })),
