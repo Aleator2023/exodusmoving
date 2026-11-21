@@ -265,9 +265,9 @@ function HeroSlider({ language = 'he' }) {
                     {text.brand}
                   </p>
 
-                  <h1 className="hero-slider__title">
+                  <h2 className="hero-slider__title">
                     {slide.title}
-                  </h1>
+                  </h2>
 
                   <p className="hero-slider__description">
                     {slide.description}
