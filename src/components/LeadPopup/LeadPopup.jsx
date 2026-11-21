@@ -5,6 +5,7 @@ import { LEGAL_HASHES } from '../LegalDialog/legalContent';
 
 import './LeadPopup.css';
 import { whatsappGreeting, whatsappLink } from '../../data/whatsapp';
+import { trackEvent } from '../../analytics';
 
 const leadPopupTranslations = {
   he: {
@@ -198,6 +199,8 @@ ${content.dateText}: ${formData.movingDate}`;
 
     const whatsappUrl =
       whatsappLink(language, message);
+
+    trackEvent('lead_form_submit', { link_location: 'lead-popup' });
 
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
