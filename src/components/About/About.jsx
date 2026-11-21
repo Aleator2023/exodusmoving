@@ -1,4 +1,5 @@
-import movingImage from '../../assets/icons/10-years-experience.png';
+import experienceBadge from '../../assets/icons/10-years-experience.png';
+import dimaPhoto from '../../assets/team/dima.webp';
 import peaceOfMindIcon from '../../assets/icons/peace-of-mind-moving.png';
 import personalServiceIcon from '../../assets/icons/personal-service.png';
 import professionalismIcon from '../../assets/icons/experience-professionalism.png';
@@ -47,7 +48,6 @@ const aboutTranslations = {
 ],
     button: 'לקבלת הצעת מחיר',
     buttonLabel: 'לקבלת הצעת מחיר באמצעות WhatsApp',
-    experience: 'שנות ניסיון',
   },
 
   ru: {
@@ -89,7 +89,6 @@ const aboutTranslations = {
 ],
     button: 'Получить предложение',
     buttonLabel: 'Получить предложение через WhatsApp',
-    experience: 'лет опыта',
   },
 
   en: {
@@ -131,7 +130,6 @@ advantages: [
 ],
     button: 'Get a Quote',
     buttonLabel: 'Get a quote via WhatsApp',
-    experience: 'years of experience',
   },
 };
 
@@ -224,14 +222,23 @@ export default function About({ language = 'he' }) {
           <div className="about__image-wrapper">
             <img
               className="about__image"
-              src={movingImage}
+              src={dimaPhoto}
               alt=""
+              width="840"
+              height="1082"
+              loading="lazy"
             />
           </div>
 
           <div className="about__experience">
-            <strong>10+</strong>
-            <span>{content.experience}</span>
+            <img
+              className="about__experience-badge"
+              src={experienceBadge}
+              alt=""
+              width="400"
+              height="419"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

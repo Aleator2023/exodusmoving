@@ -201,11 +201,11 @@
   position: relative;
   z-index: 1;
   display: flex;
-  width: min(420px, 100%);
-  aspect-ratio: 1;
+  width: min(380px, 100%);
+  aspect-ratio: 840 / 1082;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding: 0;
   overflow: hidden;
   background-color: var(--color-background-alt);
   border: 1px solid var(--color-border);
@@ -217,35 +217,25 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center 35%;
 }
 
 .about__experience {
   position: absolute;
-  right: 0;
-  bottom: 35px;
+  /* Shield hangs over the photo's bottom-right corner
+     (photo is 380px wide and centred in .about__visual) */
+  right: calc(50% - 190px - 45px);
+  bottom: -30px;
   z-index: 2;
   display: flex;
-  min-width: 145px;
-  flex-direction: column;
-  align-items: center;
-  padding: 19px 24px;
-  color: var(--color-white);
-  background-color: var(--color-primary);
-  border: 6px solid var(--color-white);
-  border-radius: 24px;
-  box-shadow: 0 15px 35px rgba(22, 24, 29, 0.25);
+  width: 140px;
 }
 
-.about__experience strong {
-  font-size: 38px;
-  line-height: 1;
-}
-
-.about__experience span {
-  margin-top: 7px;
-  font-size: 16px;
-  font-weight: 700;
+.about__experience-badge {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Планшеты */
@@ -274,9 +264,6 @@
     order: -1;
   }
 
-  .about__experience {
-    right: calc(50% - 240px);
-  }
 }
 
 /* Телефоны */
@@ -365,7 +352,7 @@
 
   .about__visual {
     min-height: 0;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
   }
 
   .about__visual::before,
@@ -374,36 +361,20 @@
   }
 
   .about__image-wrapper {
-    width: 100%;
+    width: min(290px, 100%);
     max-width: none;
-    aspect-ratio: 1.45 / 1;
-    padding: 30px;
+    margin: 0 auto;
+    aspect-ratio: 840 / 1082;
+    padding: 0;
     background-color: var(--color-white);
     border-radius: 28px;
     box-shadow: 0 14px 35px rgba(22, 24, 29, 0.12);
   }
 
-  .about__image {
-    max-width: 230px;
-    margin: 0 auto;
-  }
-
   .about__experience {
-    right: 12px;
-    bottom: 12px;
-    min-width: 112px;
-    padding: 14px 17px;
-    border-width: 4px;
-    border-radius: 18px;
-  }
-
-  .about__experience strong {
-    font-size: 30px;
-  }
-
-  .about__experience span {
-    margin-top: 5px;
-    font-size: 13px;
+    right: calc(50% - 145px - 30px);
+    bottom: -32px;
+    width: 100px;
   }
 }
 
@@ -433,7 +404,6 @@
   }
 
   .about__image-wrapper {
-    padding: 24px;
     border-radius: 24px;
   }
 
